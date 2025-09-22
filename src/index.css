@@ -1,0 +1,28 @@
+.header{
+  border-bottom: 1px solid gray;
+  display: flex;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.header .b{
+  position: absolute;
+  right: 50px;
+  top: 30px;
+}
+
+.header .b .b1{
+  padding: 10px;
+  margin-right: 10px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.header .b .b2{
+  padding: 9px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  
+}
