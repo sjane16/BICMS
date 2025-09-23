@@ -1,7 +1,11 @@
 import Header from './Header.jsx'
+import Front from './Front.jsx'
 function App() {
  return(
-  <Header />
+    <>
+    <Header />
+    <Front />
+    </>
  );
 }
 
