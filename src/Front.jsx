@@ -11,7 +11,7 @@ function Front(){
 
     const officialsTwo = [
         {id: 1, name: "Anthony O. Sera Jose", role: "Kagawad", img: officialsPic},
-        {id: 2, name: "Yolanda Purisima S. Tangi", role: "Kagawad", img: officialsPic},
+        {id: 2, name: "Yolanda S. Tangi", role: "Kagawad", img: officialsPic},
         {id: 3, name: "Gilbert D.C. Caballero", role: "Kagawad", img: officialsPic},
         {id: 4, name: "Michael C. Sera Jose", role: "Kagawad", img: officialsPic},
         {id: 5, name: "Dorida B. Zape", role: "Kagawad", img: officialsPic}
@@ -31,8 +31,28 @@ function Front(){
                         <h1 className="offtitle">Barangay Officials</h1>
                     </div>
                     <div className="cards">
-        
+                        {officials.map((person) => (
+                            <div className="card" key={person.id}>
+                                <img className="pic" src={person.img} alt={person.role}></img>
+                                <div className="identity">
+                                    <p>{person.name}</p>
+                                    <p className="role"><b>{person.role}</b></p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
+                    <div className="cards">
+                        {officialsTwo.map((user) => (
+                            <div className="card" key={user.id}>
+                                <img className="pic" src={user.img} alt={user.role}></img>
+                                <div className="identity">
+                                    <p>{user.name}</p>
+                                    <p className="role"><b>{user.role}</b></p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="space"></div>
             </div>
         </>
     );

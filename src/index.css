@@ -13,8 +13,19 @@ html, .body{
   font-family: 'Poppins';
   border-bottom: 1px solid gray;
   display: flex;
-  padding: 30px;
+  padding: 20px;
   font-size: 20px;
+}
+
+.header .logo{
+  width: 60px;
+  margin-right: 10px;
+  padding: 0;
+}
+
+.header .title{
+  position: relative;
+  top: 15px;
 }
 
 .header .b{
@@ -22,6 +33,15 @@ html, .body{
   position: absolute;
   right: 50px;
   top: 30px;
+  transition: all 0.2s ease;
+}
+
+.header .b1:active{
+  transform: scale(0.90);
+}
+
+.header .b2:active{
+  transform: scale(0.90);
 }
 
 .header .b .b1{
@@ -38,6 +58,19 @@ html, .body{
   color: white;
   border-radius: 5px;
 }
+
+.header .b .buttonlog{
+  padding: 10px;
+  margin-right: 10px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.header .buttonlog:active{
+  transform: scale(0.90);
+}
+
 
 .front{
   font-family: 'Poppins';
@@ -69,6 +102,12 @@ html, .body{
   color: white;
   font-size: 15px;
   border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.front .bpage .bp1:active{
+  transform: scale(0.90);
+  
 }
 
 .container{
@@ -88,10 +127,14 @@ html, .body{
 .container .cards{
   display: flex;
   flex-direction: row;
-  padding: 40px;
+  gap: 40px;
+  padding: 20px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
-.container .cards .card1{
+.container .cards .card{
   border: 1px solid white;
   width: 15%;
   background-color: white;
@@ -104,16 +147,56 @@ html, .body{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.container .cards .card1 .pic{
+.container .cards .card .pic{
   width: 80%;
 }
 
-.container .cards .card1 .identity{
+.container .cards .card .identity{
   margin-top: 10px;
   font-family: 'Poppins';
 }
 
-.container .cards .card1 .identity .role{
+.container .cards .card .identity .role{
   position: relative;
   left: 30px;
+}
+
+.container .space{
+  padding-bottom: 50px;
+}
+
+.footer{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainf{
+  margin-top: 20px;
+  font-family: 'Poppins';
+  font-size: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .logo{
+  width: 40px;
+  margin-right: 10px;
+}
+
+.mainf .desc{
+  position: relative;
+  left: 20px;
+  font-size:13px;
+  color: gray;
+} 
+
+.mainf .space{
+  padding-bottom: 10px;
 }
