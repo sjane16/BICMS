@@ -1,10 +1,8 @@
-import Header from './Header.jsx'
-import Front from './Front.jsx'
+import HeaderLog from './HeaderLog.jsx'
 function App() {
  return(
     <>
-    <Header />
-    <Front />
+      <HeaderLog />
     </>
  );
 }
