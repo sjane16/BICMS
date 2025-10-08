@@ -1,9 +1,8 @@
-import HeaderLog from './HeaderLog.jsx'
+import Dashmain from './Dashmain.jsx'
+
 function App() {
  return(
-    <>
-      <HeaderLog />
-    </>
+    <Dashmain />
  );
 }
 

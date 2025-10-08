@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.complaint-page{
+  margin-left: 10px;
+}
+
+.create-complaints {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 15px 20px;
+  margin-top: 20px;
+}
+
+.create-complaints .heading h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.create-complaints button {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;     
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 2px;
+}
+
+.cert1 .cert1Button{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.search_status {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.search_status img {
+  width: 20px;
+  height: 20px;
+  margin: 0 2px;
+  position: relative;
+  right: 50px;
+}
+
+.search_status input {
+  width: 300px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  position: relative;
+  right: 40px;
+}
+
+.search_status input:focus {
+  outline: none; 
+}
+
+.searchFunction {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 0 60px;
+}
+
+
+.searchFunction:focus-within {
+  border-color: #333;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.search_status .Status select {
+  outline-color: #ccc;
+  padding: 10px 50px;
+  font-size: 14px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.cert1 {
+  background: #fff;
+  outline: 1px solid #ccc;   
+  border-radius: 8px;
+  padding: 30px;
+  margin: 20px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+ 
+}
+
+.cert1 h1 {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 0;
+  position: relative;
+  bottom: 8px;
+}
+
+.cert1 h2 {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 5px 0;
+  color: gray;
+  position: relative;
+  bottom: 10px;
+}
+
+.cert1 button {
+  padding: 8px 14px;
+  font-size: 14px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cert1 button:hover {
+  background-color: black;
+  color: white;
+}
+
+.cert1 .name_status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cert1 .statbutton{
+  border-radius: 5px;
+  border: 1px solid  black;
+  padding: 10px;
+}
+
+.name_label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.complainticon{
+  width: 20px;
+  height: 20px;
+}
+
+.complaint-title{
+  display: flex;
+  flex: row;
+  gap: 10px;
+}
+
+.status-label {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: #fff;
+  position: relative;
+  bottom: 8px;
+}
+
+.status-label.ready {
+  background-color: #007bff;
+}
+
+.status-label.priority{
+  background-color: #007bff; 
+}
+
+.FirstRow{
+  padding:0;
+  margin: 0;
+}
+
+.FirstRow .cont{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.FirstRow .RowIcon{
+  width: 20px;
+}
+
+.FirstRow, .SecondRow {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.FirstRow p, .SecondRow p {
+  margin: 0;
+  font-size: 14px;
+  color:gray;
+  font-weight: 400;
+}
+
+.FirstRow .p1{
+  color: black;
+}
+
+.SecondRow {
+   width: 310px;
+    margin: -100px 0 0 400px;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+}
+
+.SecondRow .cont{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.SecondRow .RowIcon{
+  width: 20px;
+}
+
+.SecondRow p7 {
+    font-weight: bold;
+    color: black;
+}
+
+.SecondRow .p4{
+  color: black;
+}

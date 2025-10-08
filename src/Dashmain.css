@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+.dashboard-page{
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 15px 20px;
+}
+
+.header-title{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Poppins';
+    font-size: 15px;
+    justify-content: space-between;
+    font-family: 'Poppins';
+}
+
+.cont1{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+    height: auto;
+}
+
+.card{
+    border: 1px solid white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 2px;
+    width: 18%;
+    min-height: 50%;
+    border-radius: 10px;
+    font-family: 'Poppins';
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    font-size: 8px;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    font-family: 'Poppins';
+    font-size: 13px;
+}
+
+.title .icon{
+    width: 20px;
+}
+
+.desc .residents{
+    margin-top: 30px;
+}
+

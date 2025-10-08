@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom"
 import officialsPic from './assets/chairman.jpg'
 
 function Front(){
@@ -23,7 +24,9 @@ function Front(){
                 <h1 className="main"><b>Streamline Your Barangay Operations</b></h1>
                 <p className="desc">Efficiently manage complaints, issue certificates, and generate reports for your barangay</p>
                 <div className="bpage">
+                    <Link to="/login">
                     <button className="bp1"><b>Get Started     →</b></button>
+                    </Link>
                 </div>
             </div>
             <div className="container">
