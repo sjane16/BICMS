@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.resident-page{
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 15px 20px;
+}
+
+.resident-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.resident-search {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.resident-search img {
+  width: 20px;
+  height: 20px;
+  margin: 0 2px;
+  position: relative;
+  right: 50px;
+}
+
+.resident-search input {
+  width: 300px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  position: relative;
+  right: 40px;
+}
+
+.resident-search input:focus {
+  outline: none; 
+}
+
+.resident-searchFunction {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 0 60px;
+}
+
+
+.resident-searchFunction:focus-within {
+  border-color: #333;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.resident-search .resident-Status select {
+  outline-color: #ccc;
+  padding: 10px 50px;
+  font-size: 14px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.resident-add {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;     
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 2px;
+  position: relative;
+  left: 86.5%;
+}
+
+.resident-page table{
+  margin-top: 40px;
+  width: 98.5%;
+  border-collapse: collapse;
+}
+
+.resident-page th, td{
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+.resident-page th {
+  background-color: #f4f4f4;
+}

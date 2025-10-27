@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.create-certificate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.create-certificate .heading h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.create-certificate button {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search_status {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.search_status img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.search_status input {
+  width: 300px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+}
+
+.search_status input:focus {
+  outline: none;
+}
+
+.searchFunction {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.searchFunction:focus-within {
+  border-color: #333;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.search_status .Status select {
+  outline-color: #ccc;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.cert1 {
+  outline: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 210px;
+}
+
+.cert1 h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cert1 h2 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: -9px ;
+  color: #8b7979;
+}
+
+.cert1 button {
+  padding: 8px 14px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cert1 button:hover {
+  background-color: #f3f3f3;
+}
+
+.cert1 .name_status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name_label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-label {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: #fff;
+}
+
+.status-label.processing {
+  background-color: #007bff;
+}
+
+.status-label.paid {
+  background-color: #28a745;
+  align-self: flex-end;
+}
+
+.FirstRow,
+.SecondRow {
+  display: flex;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.FirstRow img,
+.SecondRow img {
+  width: 20px;
+  height: 20px;
+}
+
+.FirstRow p,
+.SecondRow p {
+  margin: 0;
+  font-size: 14px;
+  color: black;
+  font-weight: 400;
+}
+
+.name_label img {
+  width: 25px;
+  height: 25px;
+}
+
+.FirstRow1, .FirstRow2, .SecondRow1, .SecondRow2, .SecondRow3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.SecondRow {
+  margin: -120px 0 0 400px;
+}
+
+.create_cert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.create_cert_content {
+  padding: 25px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 12px; 
+}
+
+.create_cert_content input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 95%;
+}
+
+.create_cert_content button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.create_cert_content button:first-of-type {
+  background: black;
+  color: #fff;
+}
+
+.create_cert_content .button {
+  color: black;
+  border: 1px solid #333;
+  outline: 2px;
+}
+
+.create_cert_content button {
+  width: 190px;
+  gap: 20px;
+  justify-content: space-between;
+  margin: 30px 0 0 7px;
+
+  
+}
+
+
+.create_cert h2 {
+  font-size: 20px;
+  text-align: start;
+  margin: 0;
+}
+
+.create_cert p {
+  font-size: 12px;
+  text-align: start;
+  margin: -10px 0 0 0px;
+  padding: 0;
+}
+
+.create_cert h3 {
+  font-size: 13px;
+  text-align: start;
+  margin: 20px 0 1px 1px;
+}
+
+.create_cert select {
+  outline-color: #ccc;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+

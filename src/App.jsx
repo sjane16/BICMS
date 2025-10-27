@@ -1,9 +1,8 @@
-import HeaderLog from './HeaderLog.jsx'
+import Dashboard from './Dashboard.jsx'
+
 function App() {
  return(
-    <>
-      <HeaderLog />
-    </>
+    <Dashboard />
  );
 }
 

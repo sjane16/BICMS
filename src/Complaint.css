@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.complaint-page{
+  margin-left: 10px;
+}
+
+.complaints-create-complaints {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 15px 20px;
+  margin-top: 20px;
+}
+
+.complaints-create-complaints .complaints-heading h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.complaints-create-complaints button {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;     
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 2px;
+}
+
+.complaints-cert1 .complaints-cert1Button{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.complaints-search_status {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.complaints-search_status img {
+  width: 20px;
+  height: 20px;
+  margin: 0 2px;
+  position: relative;
+  right: 50px;
+}
+
+.complaints-search_status input {
+  width: 300px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  position: relative;
+  right: 40px;
+}
+
+.complaints-search_status input:focus {
+  outline: none; 
+}
+
+.complaints-searchFunction {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 0 60px;
+}
+
+
+.complaints-searchFunction:focus-within {
+  border-color: #333;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.complaints-search_status .complaints-Status select {
+  outline-color: #ccc;
+  padding: 10px 50px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.complaints-cert1 {
+  outline: 1px solid #ccc;   
+  border-radius: 8px;
+  padding: 30px;
+  margin: 20px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+ 
+}
+
+.complaints-cert1 h1 {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 0;
+  position: relative;
+  bottom: 8px;
+}
+
+.complaints-cert1 h2 {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 5px 0;
+  color: gray;
+  position: relative;
+  bottom: 10px;
+}
+
+.complaints-cert1 button {
+  padding: 8px 14px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.complaints-cert1 button:hover {
+  background-color: black;
+  color: white;
+}
+
+.complaints-cert1 .complaints-name_status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.complaints-cert1 .complaints-statbutton{
+  border-radius: 5px;
+  border: 1px solid  black;
+  padding: 10px;
+}
+
+.complaints-name_label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.complaints-complainticon{
+  width: 20px;
+  height: 20px;
+}
+
+.complaints-complaint-title{
+  display: flex;
+  flex: row;
+  gap: 10px;
+}
+
+.complaints-status-label {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: #fff;
+  position: relative;
+  bottom: 8px;
+}
+
+.complaints-status-label.ready {
+  background-color: #007bff;
+}
+
+.complaints-status-label.priority{
+  background-color: #007bff; 
+}
+
+.complaints-FirstRow{
+  padding:0;
+  margin: 0;
+}
+
+.complaints-FirstRow .complaints-cont{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.complaints-FirstRow .complaints-RowIcon{
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.complaints-FirstRow, .complaints-SecondRow {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.complaints-FirstRow p, .complaints-SecondRow p {
+  margin: 0;
+  font-size: 14px;
+  color:gray;
+  font-weight: 400;
+}
+
+.complaints-FirstRow .complaints-p1{
+  color: black;
+}
+
+.complaints-SecondRow {
+   width: 310px;
+    margin: -100px 0 0 400px;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+}
+
+.complaints-SecondRow .complaints-cont{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.complaints-SecondRow .complaints-RowIcon{
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.complaints-SecondRow p7 {
+    font-weight: bold;
+    color: black;
+}
+
+.complaints-SecondRow .complaints-p4{
+  color: black;
+}

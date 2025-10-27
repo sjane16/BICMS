@@ -1,0 +1,38 @@
+.mainf .footer{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainf{
+  margin-top: 20px;
+  font-family: 'Poppins';
+  font-size: 100px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .logo{
+  width: 60px;
+  margin-right: 10px;
+}
+
+.mainf .desc{
+  position: relative;
+  bottom: 25px;
+  left: 20px;
+  font-size:15px;
+  color: gray;
+} 
+
+.mainf .footer-title{
+  font-size: 20px;
+  position: relative;
+  bottom: 8px;
+}

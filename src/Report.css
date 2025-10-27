@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+.report-page {
+  margin: 0;
+  padding: 15px 20px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;  
+  overflow-x: hidden;
+}
+
+.report-head-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.report-download {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 10px;
+  width: 200px;
+  height: 40px;
+}
+
+.report-options {
+  margin-top: 20px;
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.report-cont1, .report-cont2 {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap; 
+  height: auto;
+}
+
+.report-card, .report-card2 {
+  border: 1px solid gray;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-family: 'Poppins';
+  flex: 1;
+  min-height: 200px;
+  background-color: white;
+}
+
+.report-card {
+  padding: 10px;
+  width: 18%;
+}
+
+.report-card2 {
+  padding: 30px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.report-title {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.report-title h1 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.report-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  font-family: 'Poppins';
+  font-size: 13px;
+}
+
+.report-residents {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.report-residents-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.report-title .report-icon {
+  width: 20px;
+}
+
+.report-date {
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+  gap: 10px;
+}
+
+.report-date .report-icon {
+  width: 20px;
+}
+
+.report-title2 {
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+}
+
+.report-desc2 {
+  margin-bottom: 20px;
+}
+
+.report-progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.report-progress-fill {
+  height: 100%;
+  background-color: #4caf50;
+  width: 0%;
+  border-radius: 10px 0 0 10px;
+  transition: width 1.5s ease-in-out;
+}
+
+.report-calendar {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  position: relative;
+  top: 8px;
+}
+
+.report-report-info {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.report-space {
+  margin-bottom: 20px;
+}
+
+.report-comp{
+    column-count: 2;
+    gap: 80%;
+}
