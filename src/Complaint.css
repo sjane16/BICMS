@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-body {
+html, body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
 }
@@ -9,7 +9,7 @@ body {
   margin-left: 10px;
 }
 
-.create-complaints {
+.complaints-create-complaints {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,13 +18,13 @@ body {
   margin-top: 20px;
 }
 
-.create-complaints .heading h1 {
+.complaints-create-complaints .complaints-heading h1 {
   margin: 0;
   font-size: 30px;
   font-weight: 700;
 }
 
-.create-complaints button {
+.complaints-create-complaints button {
   background-color: black;
   color: white;
   border-radius: 5px;
@@ -38,19 +38,19 @@ body {
   top: 2px;
 }
 
-.cert1 .cert1Button{
+.complaints-cert1 .complaints-cert1Button{
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
 
-.search_status {
+.complaints-search_status {
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
 }
 
-.search_status img {
+.complaints-search_status img {
   width: 20px;
   height: 20px;
   margin: 0 2px;
@@ -58,7 +58,7 @@ body {
   right: 50px;
 }
 
-.search_status input {
+.complaints-search_status input {
   width: 300px;
   height: 35px;
   border-radius: 5px;
@@ -68,11 +68,11 @@ body {
   right: 40px;
 }
 
-.search_status input:focus {
+.complaints-search_status input:focus {
   outline: none; 
 }
 
-.searchFunction {
+.complaints-searchFunction {
   display: flex;
   align-items: center;
   border: 2px solid #ccc;
@@ -81,22 +81,20 @@ body {
 }
 
 
-.searchFunction:focus-within {
+.complaints-searchFunction:focus-within {
   border-color: #333;
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
-.search_status .Status select {
+.complaints-search_status .complaints-Status select {
   outline-color: #ccc;
   padding: 10px 50px;
   font-size: 14px;
-  background-color: white;
   border: 2px solid #ccc;
   border-radius: 5px;
 }
 
-.cert1 {
-  background: #fff;
+.complaints-cert1 {
   outline: 1px solid #ccc;   
   border-radius: 8px;
   padding: 30px;
@@ -109,7 +107,7 @@ body {
  
 }
 
-.cert1 h1 {
+.complaints-cert1 h1 {
   font-size: 25px;
   font-weight: 600;
   margin: 0;
@@ -117,7 +115,7 @@ body {
   bottom: 8px;
 }
 
-.cert1 h2 {
+.complaints-cert1 h2 {
   font-size: 15px;
   font-weight: 400;
   margin: 5px 0;
@@ -126,50 +124,49 @@ body {
   bottom: 10px;
 }
 
-.cert1 button {
+.complaints-cert1 button {
   padding: 8px 14px;
   font-size: 14px;
-  background-color: white;
   border: 2px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.cert1 button:hover {
+.complaints-cert1 button:hover {
   background-color: black;
   color: white;
 }
 
-.cert1 .name_status {
+.complaints-cert1 .complaints-name_status {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.cert1 .statbutton{
+.complaints-cert1 .complaints-statbutton{
   border-radius: 5px;
   border: 1px solid  black;
   padding: 10px;
 }
 
-.name_label {
+.complaints-name_label {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.complainticon{
+.complaints-complainticon{
   width: 20px;
   height: 20px;
 }
 
-.complaint-title{
+.complaints-complaint-title{
   display: flex;
   flex: row;
   gap: 10px;
 }
 
-.status-label {
+.complaints-status-label {
   font-size: 12px;
   font-weight: 600;
   padding: 4px 10px;
@@ -179,30 +176,32 @@ body {
   bottom: 8px;
 }
 
-.status-label.ready {
+.complaints-status-label.ready {
   background-color: #007bff;
 }
 
-.status-label.priority{
+.complaints-status-label.priority{
   background-color: #007bff; 
 }
 
-.FirstRow{
+.complaints-FirstRow{
   padding:0;
   margin: 0;
 }
 
-.FirstRow .cont{
+.complaints-FirstRow .complaints-cont{
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
 
-.FirstRow .RowIcon{
+.complaints-FirstRow .complaints-RowIcon{
   width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
-.FirstRow, .SecondRow {
+.complaints-FirstRow, .complaints-SecondRow {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -211,18 +210,18 @@ body {
   margin-bottom: 20px;
 }
 
-.FirstRow p, .SecondRow p {
+.complaints-FirstRow p, .complaints-SecondRow p {
   margin: 0;
   font-size: 14px;
   color:gray;
   font-weight: 400;
 }
 
-.FirstRow .p1{
+.complaints-FirstRow .complaints-p1{
   color: black;
 }
 
-.SecondRow {
+.complaints-SecondRow {
    width: 310px;
     margin: -100px 0 0 400px;
     display: flex;
@@ -230,21 +229,23 @@ body {
     justify-content: space-between;
 }
 
-.SecondRow .cont{
+.complaints-SecondRow .complaints-cont{
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
 
-.SecondRow .RowIcon{
+.complaints-SecondRow .complaints-RowIcon{
   width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
-.SecondRow p7 {
+.complaints-SecondRow p7 {
     font-weight: bold;
     color: black;
 }
 
-.SecondRow .p4{
+.complaints-SecondRow .complaints-p4{
   color: black;
 }

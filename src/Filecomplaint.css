@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.file-complaint {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+
+}
+
+.file-complaint-content {
+  background: #fff;
+  padding: 25px; 
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 3px; 
+  height: auto;
+  z-index:1000;
+}
+
+.h1-filecomp {
+    font-family: Poppins;
+    text-align: start;
+    margin-bottom: 0px;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.p-filecomp {
+    font-family: Poppins;
+    font-size: 14px;
+    text-align: start;
+    margin-bottom: 0px;
+    margin-top: -15px;
+    
+}
+h2 {
+    font-family: Poppins;
+    text-align: start;
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+textarea {
+    border-radius: 6px;
+    font-family: poppins;
+    padding: 4px;
+    border-color: black;
+
+}
+
+.file-complaint-content input {
+    padding: 5px;
+    outline:solid 1px black;
+    border-radius: 6px;
+    border: none;
+    font-family: Poppins;
+}
+
+.file-complaint-content select {
+    padding: 5px;
+    border-radius: 6px;
+    font-family: Poppins;
+    border-color: black;
+}
+
+.buttons-filecomp {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;      
+    gap: 10px;                 
+    margin-top: 20px;         
+}
+
+
+.close-btn, .filecomp-btn {
+    padding: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    outline:solid 1px black;
+    background-color: white;
+    color: black;
+    font-family: poppins;
+    justify-content: end;
+
+}
+
+.buttons-filecomp :hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}

@@ -1,21 +1,31 @@
 import {Link} from "react-router-dom"
-import officialsPic from './assets/chairman.jpg'
+import officialsPic from './assets/officials.jpg'
+import Chairman from './assets/c.png'
+import Secretary from './assets/s.png'
+import Treasurer from './assets/t.png'
+import Kagawad1 from './assets/kagjacinto.png'
+import Kagawad2 from './assets/kagmaddatu.png'
+import Kagawad3 from './assets/kagtoni.png'
+import Kagawad4 from './assets/kagoly.png'
+import Kagawad5 from './assets/kagcaballero.png'
+import Kagawad6 from './assets/kagmichael.png'
+import Kagawad7 from './assets/kagzafe.png'
 
 function Front(){
     const officials = [
-        {id: 1, name: "Edgardo A. Bornales", role: "Chairman", img: officialsPic},
-        {id: 2, name: "Manilyn R. Malonzo", role: "Secretary", img: officialsPic},
-        {id: 3, name: "Amalia V. Guina", role: "Treasurer", img: officialsPic},
-        {id: 4, name: "Conrad S. Jacinto", role: "Kagawad", img: officialsPic},
-        {id: 5, name: "Pedro S. Maddatu", role: "Kagawad", img: officialsPic},
+        {id: 1, name: "Edgardo A. Bornales", role: "Chairman", img: Chairman},
+        {id: 2, name: "Manilyn R. Malonzo", role: "Secretary", img: Secretary},
+        {id: 3, name: "Amalia V. Guina", role: "Treasurer", img: Treasurer},
+        {id: 4, name: "Conrad S. Jacinto", role: "Kagawad", img: Kagawad1},
+        {id: 5, name: "Pedro S. Maddatu", role: "Kagawad", img: Kagawad2},
     ];
 
     const officialsTwo = [
-        {id: 1, name: "Anthony O. Sera Jose", role: "Kagawad", img: officialsPic},
-        {id: 2, name: "Yolanda S. Tangi", role: "Kagawad", img: officialsPic},
-        {id: 3, name: "Gilbert D.C. Caballero", role: "Kagawad", img: officialsPic},
-        {id: 4, name: "Michael C. Sera Jose", role: "Kagawad", img: officialsPic},
-        {id: 5, name: "Dorida B. Zape", role: "Kagawad", img: officialsPic}
+        {id: 1, name: "Anthony O. Sera Jose", role: "Kagawad", img: Kagawad3},
+        {id: 2, name: "Yolanda S. Tangi", role: "Kagawad", img: Kagawad4},
+        {id: 3, name: "Gilbert D.C. Caballero", role: "Kagawad", img: Kagawad5},
+        {id: 4, name: "Michael C. Sera Jose", role: "Kagawad", img: Kagawad6},
+        {id: 5, name: "Dorida B. Zape", role: "Kagawad", img: Kagawad7}
     ];
 
     return(

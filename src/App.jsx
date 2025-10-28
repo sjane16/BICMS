@@ -1,8 +1,8 @@
-import Dashmain from './Dashmain.jsx'
+import Dashboard from './Dashboard.jsx'
 
 function App() {
  return(
-    <Dashmain />
+    <Dashboard />
  );
 }
 

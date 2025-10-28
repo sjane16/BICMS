@@ -1,50 +1,73 @@
-import HeaderLog from './HeaderLog'
-import './Dashboard.css'
-import Dash from './assets/dashboard.png'
-import Cert from './assets/certf.png'
-import Convo from './assets/conv.png'
-import Report from './assets/report.png'
-import Residents from './assets/team.png'
+import {useState} from "react";
+import HeaderLog from './HeaderLog.jsx';
+import Dashmain from './Dashmain.jsx';
+import Complaint from './Complaint.jsx';
+import Resident from './Residentpage.jsx';
+import Reports from './Report.jsx';
+import Certificate from './Certificates.jsx';
+import './Dashboard.css';
+import Dash from './assets/dashboard.png';
+import Cert from './assets/certf.png';
+import Convo from './assets/conv.png';
+import Report from './assets/report.png';
+import Residents from './assets/team.png';
 
 function Dashboard(){
+
+    const[selectedPage, setSelectedPage]=useState("dashboard");
+
+
     return(
         <>
+        <div className="dashboard-container">
         <HeaderLog />
-        <div className="Sidebar">
-            <div className="button">
-            <div className="b">
-                <button className="dbutton">
-                    <img className="dicon" src={Dash}></img>
+        <div className="dashboard-page">
+        <div className="dashboard-Sidebar">
+            <div className="dashboard-button">
+            <div className="dashboard-b">
+                <button className="dashboard-dbutton" onClick={() => setSelectedPage("dashboard")}>
+                    <img className="dashboard-dicon" src={Dash}></img>
                     Dashboard
                 </button>
             </div>
-            <div className="b">
-                <button className="dbutton">
-                <img className="dicon" src={Cert}></img>
+            <div className="dashboard-b">
+                <button className="dashboard-dbutton" onClick={() => setSelectedPage("certificates")}>
+                <img className="dashboard-dicon" src={Cert}></img>
                     Certificates
                 </button>
-            </div>
-            <div className="b">
-            <button className="dbutton">
-            <img className="dicon" src={Convo}></img>
+            </div> 
+            <div className="dashboard-b">
+            <button className="dashboard-dbutton" onClick={() => setSelectedPage("complaints")}>
+            <img className="dashboard-dicon" src={Convo}></img>
                 Complaints
             </button>
             </div>
-            <div className="b">
-                <button className="dbutton">
-                <img className="dicon" src={Residents}></img>
+            <div className="dashboard-b">
+                <button className="dashboard-dbutton" onClick={() => setSelectedPage("residents")}>
+                <img className="dashboard-dicon" src={Residents}></img>
                 Residents
                 </button>
             </div>
-            <div className="b">
-                <button className="dbutton">
-                <img className="dicon" src={Report}></img>
+            <div className="dashboard-b">
+                <button className="dashboard-dbutton" onClick={() => setSelectedPage("reports")}>
+                <img className="dashboard-dicon" src={Report}></img>
                 Reports
                 </button>
             </div>
             </div>
         </div>
+        <div className="dashboard-maincontent">
+            {selectedPage === "dashboard" && (<Dashmain selectedPage={selectedPage} setSelectedPage={setSelectedPage} />)}
+            {selectedPage === "certificates" && <Certificate />}
+            {selectedPage === "complaints" && <Complaint />}
+            {selectedPage === "residents" && <Resident />}
+            {selectedPage === "reports" && <Reports />}
+
+            </div>
+        </div>
+        </div>
         </>
-    );
+    )
 }
+
 export default Dashboard;

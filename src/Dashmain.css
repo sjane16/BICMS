@@ -1,18 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-body {
+html, body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   height: 100%;
 }
 
-.dashboard-page{
+.dashmain-page{
     margin-top: 20px;
     margin-left: 10px;
-    padding: 15px 20px;
 }
 
-.header-title{
+.dashmain-header-title{
     display: flex;
     flex-direction: row;
     font-family: 'Poppins';
@@ -21,7 +20,7 @@ body {
     font-family: 'Poppins';
 }
 
-.cont1{
+.dashmain-cont1{
     margin-top: 20px;
     display: flex;
     flex-direction: row;
@@ -31,26 +30,32 @@ body {
     height: auto;
 }
 
-.card{
+.dashmain-card{
     border: 1px solid white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    padding: 2px;
+    padding: 10px;
     width: 18%;
-    min-height: 50%;
+    min-height: 200px;
     border-radius: 10px;
     font-family: 'Poppins';
+    flex: 1;
+    border: 1px solid gray;
 }
 
-.title{
+.dashmain-title{
     display: flex;
     flex-direction: row;
-    font-size: 8px;
     gap: 10px;
     justify-content: center;
     margin-top: 30px;
 }
 
-.desc{
+.dashmain-title h1{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.dashmain-desc{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,11 +65,104 @@ body {
     font-size: 13px;
 }
 
-.title .icon{
+.dashmain-residents {
+    margin: 0; 
+    padding: 0;      
+    text-align: center;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+}
+
+.dashmain-residents-container{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.dashmain-desc h1{
+    font-size: 40px;
+}
+
+.dashmain-title .dashmain-icon{
     width: 20px;
 }
 
-.desc .residents{
+.dashmain-desc .dashmain-residents{
     margin-top: 30px;
 }
 
+.dashmain-cont2{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+    height: auto;
+}
+
+.dashmain-card2{
+    border: 1px solid white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 30%;
+    min-height: 200px;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    flex: 1;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashmain-date{
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    gap: 10px;
+}
+
+.dashmain-date .dashmain-icon{
+    width: 20px;
+}
+
+.dashmain-title2{
+    display: flex;
+    flex-direction: row;
+    font-weight: 500;
+}
+
+.dashmain-desc2{
+    margin-bottom: 20px;
+}
+
+.dashmain-page button{
+    display: block;
+    width: 100%;
+    margin: 20px auto 0;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid gray;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.dashmain-page button:hover{
+    background-color: #f2f3f8;
+}
+
+.dashmain h1, p{
+    margin: 0;
+    padding: 0;
+}
+
+.dashmain-page button:last-child {
+  margin-bottom: 0;
+}
