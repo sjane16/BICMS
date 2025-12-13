@@ -4,72 +4,120 @@ html, body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   height: 100%;
-  background-color: white;
-
+  background-color: #f8fafc;
 }
 
 .dashboard-container {
   display: flex;
   flex-direction: column;
-  height: 100vh; 
+  height: 100vh;
+  width: 100%;
+  margin-top: -10px;
+  background-color: #f8fafc;
 }
 
-.dashboard-page{
-    display: flex;
-    flex: 1;
+.dashboard-page {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
 }
 
-.dashboard-Sidebar{
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    height: 100%;
-    border-right: 1px solid black;
-    gap: 10px;
-    padding-top: 30px;
+.dashboard-Sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  flex-shrink: 0;
+  border-right: 1px solid #e2e8f0;
+  gap: 8px;
+  padding: 24px 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
-.dashboard-maincontent{
-    flex: 1;
-    padding: 10px 50px;
-    display: flex;
-    flex-direction: column;
+.dashboard-maincontent {
+  flex: 1;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: auto;
+  background-color: #f8fafc;
 }
 
-.dashboard-Sidebar .dashboard-b{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 10px;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-
-
+.dashboard-Sidebar .dashboard-b {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: transparent;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
-.dashboard-Sidebar .dashboard-b .dashboard-dicon{
-    width: 20px;
-    margin-left: 10px;
+.dashboard-b:hover {
+  background-color: #eff6ff;
+  transform: translateX(4px);
 }
 
-.dashboard-Sidebar .dashboard-dbutton{
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    padding: 5px;
-    gap: 20px;
-    font-size: 15px;
-    font-family: 'Poppins';
-    margin: 0 20px;
-    border-radius: 5px;
-    color: gray;
-    border: 1px solid white;
-    cursor: pointer;
-    background-color: white;
+.dashboard-Sidebar .dashboard-b .dashboard-dicon {
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  opacity: 0.7;
 }
 
-.dashboard-Sidebar .dashboard-dbutton:focus{
-    background-color: black;
-    color: white;
+.dashboard-b:hover .dashboard-dicon {
+  opacity: 1;
+  filter: brightness(0.85);
 }
 
+.dashboard-Sidebar .dashboard-dbutton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 10px 12px;
+  gap: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 8px;
+  color: #64748b;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+}
+
+.dashboard-dbutton:hover {
+  color: #2563eb;
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.dashboard-b {
+    margin-bottom: 20px;
+}
+
+.dashboard-Sidebar .dashboard-dbutton:focus {
+  outline: none;
+  background-color: #2563eb;
+  color: white;
+  border-color: #1d4ed8;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.dashboard-dbutton:active {
+  transform: scale(0.98);
+}
+
+.dashboard-Sidebar {
+    padding-top: 40px;
+} 

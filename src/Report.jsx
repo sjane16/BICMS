@@ -11,13 +11,13 @@ function Report(){
         setSelectedReport(e.target.value);
     };
     
+    const[compReport, setCompReport] = useState(null);
     
     return(
         <>
         <div className="report-page">
             <div className="report-head-title">
                 <h1>Reports</h1>
-                <button className="report-download">⭳ Download Report</button>
             </div>
             <div className="report-dropdown">
                 <select className="report-options" id="overview" name="overview" value={selectedReport} onChange={handleChange}>

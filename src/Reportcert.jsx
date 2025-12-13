@@ -1,58 +1,119 @@
 import './Report.css'
-import Calendar from './assets/calendar.png'
+import Pending from './assets/pending.png';
+import Processing from './assets/clock.png';
+import Ready from './assets/ready.png';
+import Claim from './assets/claim.png';
+import ResInfo from './assets/repinfo.png';
+import {useState, useEffect} from "react";
+import Dlreportcert from './Dlreportcert.jsx';
 
 function Reportcert(){
+    const[downloadCertRep, setDownloadCertRep] = useState(null);
+    const[stats, setStats] = useState([]);
+    const[repinfo, setRepInfo] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost/bicms_backend/certreport.php", {
+            method: "GET",
+            headers: {"Content-Type" : "application/json"},
+            credentials: "include"
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.success){
+                setStats(data);
+            }else{
+                alert(data.message)
+            }
+        })
+    }, []);
+
+    const fetchrepinfo = () => {
+    fetch("http://localhost/bicms_backend/reportinfocert.php", {
+            method: "GET",
+            headers: {"Content-Type" : "application/json"},
+            credentials: "include"
+        })
+        .then(res => res.json())
+        .then(data => setRepInfo(data))
+        .catch(err => console.error("Failed to fetch report info:", err));
+    }
+
+    useEffect(() => {
+        fetchrepinfo()
+    }, []);
+
     return(
         <>
+            <div className="report-head-title">
+                <button className="report-download"
+                onClick={() => setDownloadCertRep(true)}
+                >⭳ Download Report</button>
+            </div>
              <div className="report-cont1">
                          <div className="report-card">
                              <div className="report-title">
                              <h1>Pending</h1>
+                             <img src = {Pending} />
                              </div>
                                  <div className="report-desc">
-                                 <h1><b>1</b></h1>
+                                 <h1><b>{stats.pending}</b></h1>
                                  </div>
                          </div>
                          <div className="report-card">
                              <div className="report-title">
                              <h1>Processing</h1>
+                             <img src = {Processing} /> 
                              </div>
                                  <div className="report-desc">
-                                     <h1><b>1</b></h1>
+                                     <h1><b>{stats.processing}</b></h1>
                                  </div>
                          </div>
                           <div className="report-card">
                              <div className="report-title">
                              <h1>Ready</h1>
+                             <img src = {Ready} />
                              </div>
                                  <div className="report-desc">
-                                     <h1><b>1</b></h1>
+                                     <h1><b>{stats.ready}</b></h1>
                                  </div>
                          </div>
                          <div className="report-card">
                              <div className="report-title">
                              <h1>Claimed</h1>
+                             <img src = {Claim} />
                              </div>
                                  <div className="report-desc">
-                                     <h1><b>1</b></h1>
+                                     <h1><b>{stats.claimed}</b></h1>
                                  </div>
                          </div>
                 </div>
                     <div className="report-cont2">
                             <div className="report-card2">
-                                <div className="report-report-info">
-                                    <img className="report-calendar" src={Calendar} alt="Calendar icon"></img>
-                                <h1 className="report-title2">Report Information</h1>
+                                <div className="report-info-header">
+                                    <img className="report-calendar" src={ResInfo} alt="Report icon"></img>
+                                    <h1 className="report-title2">Report Information</h1>
                                 </div>
+                                {repinfo.length > 0 ? (
                                 <div className="report-info">
-                                    <p><b>Report Type:</b> System Overview</p>
-                                    <p><b>Period:</b> Current Month</p>
-                                    <p><b>Generated:</b> 10/23/25</p>
-                                    <p><b>Date as of:</b> 10/23/25</p>
+                                    <p><b>Report Type:</b> {repinfo[0].report_type}</p>
+                                    <p><b>Period:</b> {repinfo[0].period}</p>
+                                    <p><b>Generated by:</b> {repinfo[0].generated_by}</p>
+                                    <p><b>Date as of:</b> {repinfo[0].generation_date}</p>
                                 </div>
+                                ): " "}
                             </div>
                     </div>
                     <div className="report-space"></div>
+
+                    {downloadCertRep && (
+                        <Dlreportcert
+                        onClose={() => {setDownloadCertRep(null)
+                            fetchrepinfo()
+                        }}
+                        />
+                    )}
+       
        
         </>
     );

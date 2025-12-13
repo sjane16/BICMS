@@ -14,6 +14,14 @@ html, body {
   box-sizing: border-box;
   overflow-y: auto;  
   overflow-x: hidden;
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+}
+
+.report-page::-webkit-scrollbar {
+  display: none;
 }
 
 .report-head-title {
@@ -24,7 +32,7 @@ html, body {
 }
 
 .report-download {
-  background-color: black;
+  background: #2563eb ;
   color: white;
   border-radius: 5px;
   border: none;
@@ -55,6 +63,7 @@ html, body {
   align-items: stretch;
   flex-wrap: wrap; 
   height: auto;
+  
 }
 
 .report-card, .report-card2 {
@@ -65,8 +74,32 @@ html, body {
   flex: 1;
   min-height: 200px;
   background-color: white;
+  border-top: 20px solid blue;
 }
 
+.report-card:first-child {
+  border-top: 20px solid #2563EB;
+}
+
+.report-card:nth-child(2) {
+  border-top: 20px solid rgb(222, 222, 38)
+}
+
+.report-card:nth-child(3) {
+  border-top: 20px solid #3B7542;
+}
+
+.report-card:nth-child(4) {
+  border-top: 20px solid #1c0d8c;
+}
+
+.report-card2:first-child {
+  border-top: 20px solid #22BB76; 
+}  
+
+.report-card2:nth-child(2) {
+  border-top: 20px solid #22BB76;
+}
 .report-card {
   padding: 10px;
   width: 18%;
@@ -74,6 +107,7 @@ html, body {
 
 .report-card2 {
   padding: 30px;
+  height: auto;
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -85,6 +119,7 @@ html, body {
   gap: 10px;
   justify-content: center;
   margin-top: 30px;
+  
 }
 
 .report-title h1 {
@@ -121,7 +156,7 @@ html, body {
 }
 
 .report-title .report-icon {
-  width: 20px;
+  width: 30px;
 }
 
 .report-date {
@@ -138,7 +173,8 @@ html, body {
 .report-title2 {
   display: flex;
   flex-direction: row;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 30px;
 }
 
 .report-desc2 {
@@ -176,11 +212,64 @@ html, body {
   gap: 8px;
 }
 
+.report-card2 .report-info p {
+  margin-top: 5px;
+  font-size: 15px;
+}
+
 .report-space {
   margin-bottom: 20px;
 }
 
 .report-comp{
-    column-count: 2;
-    gap: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.report-comp-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 14px;
+}
+
+.report-card2 .report-info-header {
+  display:flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.report-card .report-info-header {
+  display:flex;
+  flex-direction: row;
+  gap: 5px;
+  object-fit: contain;
+}
+
+.report-card img {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+}
+
+.ResRate {
+  height: 35px;
+  width: 35px;
+  margin-right: 5px;
+}
+
+.report-categories {
+  width: 30px;
+  height: 30px;
+  margin-top: 7px;
+  margin-right: 2px;
+}
+
+.cert-type {
+  width: 30px;
+  height: 30px;
+  margin-top: 9px;
+  margin-right: 2px;
+
 }

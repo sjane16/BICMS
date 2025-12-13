@@ -6,11 +6,11 @@ import Resident from './Residentpage.jsx';
 import Reports from './Report.jsx';
 import Certificate from './Certificates.jsx';
 import './Dashboard.css';
-import Dash from './assets/dashboard.png';
-import Cert from './assets/certf.png';
-import Convo from './assets/conv.png';
-import Report from './assets/report.png';
-import Residents from './assets/team.png';
+import Dash from './assets/dashboard_.png';
+import Cert from './assets/certificates_.png';
+import Convo from './assets/complaints_.png';
+import Report from './assets/report_.png';
+import Residents from './assets/residents_.png';
 
 function Dashboard(){
 
@@ -23,7 +23,7 @@ function Dashboard(){
         <HeaderLog />
         <div className="dashboard-page">
         <div className="dashboard-Sidebar">
-            <div className="dashboard-button">
+            <div className="dashboard-button">     
             <div className="dashboard-b">
                 <button className="dashboard-dbutton" onClick={() => setSelectedPage("dashboard")}>
                     <img className="dashboard-dicon" src={Dash}></img>

@@ -13,7 +13,9 @@ function Header(){
                     <Link to="/login">
                     <button className="b1"><b>Log-in</b></button>
                     </Link>
+                    <Link to="/register">
                     <button className="b2"><b>Register</b></button>
+                    </Link>
                 </div>
             </div>
         </>

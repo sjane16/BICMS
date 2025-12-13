@@ -6,116 +6,192 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6); 
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-
 }
 
 .add-resident-content {
   background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  width: 800px;
+  padding: 25px 25px 25px 45px;
+  border-radius: 20px;
+  width: 900px;
   max-width: 90%;
-  text-align: center; 
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 16px;
+  position: relative;
   height: auto;
-  z-index:1000;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.add-resident-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 100%;
+  background: #1E40AF;
+  border-radius: 20px 0 0 20px;
+}
+
+.AddRes-Header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 5px;
+  margin-left: -7px;
+}
+
+.ResIcon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin-left: 8px;
 }
 
 .h1-addresident {
-    font-family: Poppins;
-    text-align: start;
-    margin-bottom: 0px;
-    padding: 0;
-    margin-top: 0px;
-    font-size: 25px;
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 25px;
+  text-align: start;
+  margin: 0 0 5px -10px;
+  line-height: 1;
 }
 
 .p-addresident {
-    font-family: Poppins;
-    font-size: 14px;
-    text-align: start;
-    margin-bottom: 0px;
-    margin-top: -15px;
-    
+  font-family: Poppins;
+  font-size: 14px;
+  text-align: start;
+  margin: -18px 0 10px 0;
 }
 
-h2 {
-    font-family: Poppins;
-    text-align: start;
-    font-size: 14px;
-    margin-top: 20px;
+
+.Full-Name-Container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: flex-start;
+  margin-bottom: 8px;
 }
 
-textarea {
-    border-radius: 6px;
-    font-family: poppins;
-    padding: 4px;
-    border-color: black;
-    display: flex;
-
+.name-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
 }
 
-.add-resident-content input {
-    padding: 5px;
-    outline:solid 1px black;
-    border-radius: 6px;
-    border: none;
-    font-family: Poppins;
-    display: flex;
-    margin-bottom: 5px;
+.addresident-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  width: 100%;
 }
 
-.add-resident-content select {
-    padding: 5px;
-    border-radius: 6px;
-    font-family: Poppins;
-    border-color: black;
-    display: flex;
+.input-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
 }
 
+/* Floating labels */
+.h2-addresident {
+  font-family: Poppins;
+  font-size: 12px;
+  color: #000000;
+  background: #fff;
+  display: inline-block;
+  padding: 0 4px;
+  position: absolute;
+  top: 3px;
+  left: 10px;
+  z-index: 10;
+  margin: 0;
+  width: auto;
+}
+
+
+.input-field input,
+.input-field select,
+.input-field textarea {
+  margin-top: 12px;
+  padding: 12px 8px 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: Poppins;
+  background: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 14px;
+}
+
+.input-field textarea {
+  resize: vertical;
+  min-height: 45px;
+}
+
+.input-field select {
+  cursor: pointer;
+}
+
+/* Buttons */
 .buttons-addresident {
-    display: flex;
-    justify-content: flex-end; 
-    align-items: center;       
-    gap: 10px;                
-    margin-top: auto;         
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.close-btn,
+.addresident-btn {
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: white;
+  color: black;
+  font-family: Poppins;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.close-btn:hover,
+.addresident-btn:hover {
+  background-color: #1E40AF;
+  color: white;
+  border-color: #1E40AF;
 }
 
 
-.close-btn, .addresident-btn {
-    padding: 5px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    outline:solid 1px black;
-    background-color: white;
-    color: black;
-    font-family: poppins;
-    justify-content: end;
+@media (max-width: 768px) {
+  .Full-Name-Container {
+    flex-direction: column;
+    gap: 0;
+  }
 
+  .addresident-grid {
+    grid-template-columns: 1fr;
+    gap: 20px 0;
+  }
+
+  .name-field {
+    min-width: 100%;
+  }
+
+  .add-resident-content {
+    max-width: 95%;
+    padding: 20px 20px 20px 40px;
+  }
 }
-
-.buttons-addresident :hover {
-    cursor: pointer;
-    background-color: black;
-    color: white;
-}
-
-.addresident-cont1{
-    column-count: 2;
-    column-fill: balance;
-}
-
-.addres-lname{
-    margin-top: 0;
-}
-

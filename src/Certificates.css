@@ -78,13 +78,16 @@ body {
 .cert1 {
   outline: 1px solid #ccc;
   border-radius: 8px;
-  padding: 20px;
-  margin: 20px;
+  padding: 30px;
+  margin: 200px;
+  position: relative;
+  right: 18px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   gap: 15px;
-  height: 210px;
+  height: auto;
+  width: 100%;
 }
 
 .cert1 h1 {
@@ -94,7 +97,7 @@ body {
 }
 
 .cert1 h2 {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 500;
   margin-top: -9px ;
   color: #8b7979;
@@ -200,7 +203,7 @@ body {
   border-radius: 10px;
   width: 400px;
   max-width: 90%;
-  text-align: center; 
+  text-align: rnter; 
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   display: flex;
   flex-direction: column;
@@ -254,7 +257,279 @@ body {
   text-align: start;
   margin: -10px 0 0 0px;
   padding: 0;
+}@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
 }
+
+.certificate-page {
+  margin-left: 10px;
+}
+
+/* Header Section */
+.create-certificate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 15px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.create-certificate .heading h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.create-certificate button {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 2px;
+}
+
+/* Search Bar and Status Filter */
+.search_status {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.search_status img {
+  width: 20px;
+  height: 20px;
+  margin: 0 2px;
+  position: relative;
+  right: 50px;
+}
+
+.search_status input {
+  width: 300px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  position: relative;
+  right: 40px;
+}
+
+.search_status input:focus {
+  outline: none;
+}
+
+.searchFunction {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 0 60px;
+}
+
+.searchFunction:focus-within {
+  border-color: #333;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.search_status .Status select {
+  outline-color: #ccc;
+  padding: 10px 50px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Certificate Card */
+.certificate-list {
+  margin: -5px;
+}
+
+.cert1 {
+  outline: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 60px;
+  margin: 20px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cert1 h1 {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 0;
+  position: relative;
+  bottom: 8px;
+}
+
+.cert1 h2 {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 5px 0;
+  color: gray;
+  position: relative;
+  bottom: 10px;
+}
+
+.cert1 button {
+  padding: 8px 14px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cert1 button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Name and Status Section */
+.certificate-name_status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.certificate-name_label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.certificate-title {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.certificate-complainticon {
+  width: 20px;
+  height: 20px;
+}
+
+.certificate-status-label {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: #fff;
+  position: relative;
+  bottom: 8px;
+}
+
+.certificate-status-label.ready {
+  background-color: #007bff;
+}
+
+.certificate-status-label.priority {
+  background-color: #28a745;
+}
+
+/* Buttons */
+.cert1Button {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.certificate-statbutton {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+/* Certificate Information Rows */
+.certificate-FirstRow {
+  padding: 0;
+  margin-left: 30px;
+}
+
+.certificate-FirstRow .certificate-cont {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.certificate-FirstRow .certificate-RowIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.certificate-FirstRow,
+.certificate-SecondRow {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.certificate-FirstRow p,
+.certificate-SecondRow p {
+  margin: 0;
+  font-size: 14px;
+  color: gray;
+  font-weight: 400;
+}
+
+.certificate-FirstRow .certificate-p1 {
+  color: black;
+}
+
+.certificate-SecondRow {
+  width: 310px;
+  margin: -100px 0 0 400px;
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+}
+
+.certificate-SecondRow .certificate-cont {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.certificate-SecondRow .certificate-cont:first-child {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+
+.certificate-SecondRow .certificate-RowIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.certificate-SecondRow .certificate-p4 {
+  color: black;
+  margin-left: -30px;
+
+}
+
+.certificate-cont .certificate-p4 {
+  margin-left: 1px;
+}
+
 
 .create_cert h3 {
   font-size: 13px;
@@ -268,6 +543,42 @@ body {
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+ .cert1 .cert-type{
+  position: relative;
+  margin-top: -10px;
+  width: 200px;
+}
+
+.certificate-dates .certificate-cont .cert-request{
+  color: black;
+}
+
+.certificate-dates{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.certificate-dates .certificate-cont .cert-issued{
+  color: black;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.certificate-cont  .certificate-RowIcon {
+  margin-left: -30px;
+}
+
+.cert-issued {
+  margin-left: 20px;
+}
+
+.cert-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 

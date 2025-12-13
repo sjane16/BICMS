@@ -7,7 +7,7 @@ html, body {
 
 .resident-page{
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left:10px;
     padding: 15px 20px;
 }
 
@@ -16,13 +16,28 @@ html, body {
     flex-direction: row;
     justify-content: space-between;
     font-size: 20px;
+    margin-left: -20px;
 }
+
+.table-design {
+  transform: scale(0.93);
+  margin-left: -60px;
+  width: 80vw;
+}
+
+table {
+  font-size: 15px;
+  
+}
+
 
 .resident-search {
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
+  margin-right: -28px;
 }
+
 
 .resident-search img {
   width: 20px;
@@ -83,6 +98,7 @@ html, body {
   top: 2px;
   position: relative;
   left: 86.5%;
+  margin-left: 14px;
 }
 
 .resident-page table{
@@ -99,4 +115,26 @@ html, body {
 
 .resident-page th {
   background-color: #f4f4f4;
+}
+
+
+.editdelete-cont{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  gap: 10px;
+  align-items: center;
+
+}
+
+.editdelete{
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.ed-b{
+  background-color: white;
+  border: none;
 }
