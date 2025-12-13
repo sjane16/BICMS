@@ -6,94 +6,208 @@ import Profile from './assets/profile.png'
 import Tel from './assets/telephone.png'
 import Warning from './assets/warning.png'
 import Calendar from './assets/calendar.png'
-import React, { useState } from 'react';
-import Filecomplaint from './Filecomplaint.jsx'
+import React, { useState, useEffect } from 'react';
+import Assign from './Assign.jsx';
+import Resolve from './Resolve_.jsx';
+import Dismiss from './Dismiss.jsx';
+import Location from './assets/location.png';
+import description from './assets/description.png';
+import assigncon from './assets/assigned.png';
+import resolution from './assets/resolution.png';
 
 function Complaint(){
-    const [isOverlayOpen, setIsOverlayOpen] = useState (false);
+    const [complaints, setComplaints] = useState([]);
+    const [search, setSearch] = useState("");
+    const [assign, setAssign] = useState(null);
+    const [resolve, setResolve] = useState(null);
+    const [dismiss, setDismiss] = useState(null);
+    const [status, setStatus] = useState("");
 
+    const fetchComplaints = () => {
+        fetch("http://localhost/bicms_backend/trackcomp.php", {
+            method: "POST",
+            credentials: "include"
+        })
+        .then(res => res.json())
+        .then(data => setComplaints(data))
+        .catch(err => console.error("Fetch Error:", err))
+    }
+
+    useEffect(() => {
+        fetchComplaints();
+    }, []);
+
+    const filterComp = complaints
+    .filter(complaint => {
+        if(status === "") return complaint.status != "dismissed";
+        return complaint.status === status;
+    })
+    .filter(complaint =>{
+        if(!search) return true;
+        const formatID = `C00${complaint.id}`;
+        const searchLower = search.toLowerCase();
+        return(
+            formatID.toLowerCase().includes(searchLower) ||
+            complaint.fullname.toLowerCase().includes(searchLower)
+        )
+    });
 
     return(
         <>
+        
         <div className="complaint-page">
         <div className="complaints-create-complaints">
             <div className="complaints-heading">
                 <h1>Complaints</h1>
-            </div>
-
-            <div className="complaints-button">
-                <button onClick = {() => setIsOverlayOpen(true)}><b>+ &nbsp;File Complaint</b></button>
             </div>
         </div>
     
         <div className="complaints-search_status">
             <div className="complaints-searchFunction">
                 <img src={SearchLogo} alt="searchlogo" />
-                <input type="text" placeholder="Search by name or ID..." />
+                <input 
+                type="text" 
+                placeholder="Search by name or ID..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                />
             </div>
 
             <div className="complaints-Status">
-                <select>
-                    <option value="" disabled selected>All Status</option>
+                <select value={status} onChange ={(e) => setStatus(e.target.value)}>
+                    <option value="" >All Status</option>
                     <option value="pending">Pending</option>
-                    <option value="approved">Resolved</option>
-                    <option value="denied">Dismissed</option>
+                    <option value="in progress">In Progress</option>
+                    <option value="resolved">Resolved</option>
+                    <option value="dismissed">Dismissed</option>
                 </select>
             </div>
         </div>
 
-        {isOverlayOpen && (
-            <Filecomplaint
-                onClose = {() => setIsOverlayOpen (false)}
-                    />
-                )}
-                    
-        <div className="complaints-list-certificate">
+         {filterComp.map((complaint, index) => { 
+            return(         
+        <div className="complaints-list-certificate" key={complaint.id}>
             <div className="complaints-cert1">
                 <div className="complaints-name_status">
                     <div className="complaints-name_label">
                         <div className="complaints-complaint-title">
                         <img className="complaints-complainticon" src={Convo} alt="Complaint icon"></img>
-                        <h1>C001</h1>
+                        <h1>C00{complaint.id}</h1>
                         </div>
-                        <span className="complaints-status-label ready">Pending</span>
-                        <span className="complaints-status-label priority">Medium</span>
+                        <span className="complaints-status-label ready">{complaint.status}</span>
                     </div>
                     <div className="complaints-cert1Button">
-                    <button className="complaints-statbutton">Create Notice</button>
-                    <button className="complaints-statbutton">Resolve</button>
+                    {!complaint.assigned_to && (
+                    <button className="complaints-statbutton" onClick={() => setAssign(complaint)}>Assign</button>
+                    )}
+                    {complaint.status === "in progress"  && (
+                    <button className="complaints-statbutton" onClick={() => setResolve(complaint)}>Resolve</button>
+                    )}
+                    {/* <button className="complaints-statbutton" onClick ={() => setDismiss(complaint)}>File Action</button> */}
                     </div>
                 </div>
 
-                <h2>Loud Music Disturbance</h2>
+                <h2>{complaint.subject}</h2>
 
-
+            <div className = "column-item">
                 <div className="complaints-FirstRow">
+                    <h2>Complainant</h2>
                     <div className="complaints-cont">
                     <img className="complaints-RowIcon" src={Profile} alt="Profile icon"></img>
-                    <p className="complaints-p1"><b>Jose Martinez</b></p>
+                    <p className="complaints-p1"><b>{complaint.fullname}</b></p>
                     </div>
                     <div className="complaints-cont">
                     <img className="complaints-RowIcon" src={Tel} alt="Telephone icon"></img>
-                    <p className="complaints-p2">09123456789</p>
+                    <p className="complaints-p2">{complaint.contact}</p>
                     </div>
-                    <p className="complaints-p3">Blk 4 Lot 20, Barangay Sample</p>
+                    <div className = "complaints-cont">
+                    <img className = "complaints-RowIcon" src = {Location} />
+                    <p className="complaints-p3">{complaint.address}</p>
+                    </div>
                     <div className="complaints-cont">
                         <img className="complaints-RowIcon" src={Warning}></img>
-                        <p>Noise</p>
+                        <p>{complaint.type}</p>
                     </div>
                 </div>
 
                 <div className="complaints-SecondRow">
-                    <p className="complaints-p4">Neighbor playing loud music until late hours disturbing the peace</p>
+                    <h2>Respondent</h2>
+                    <div className="complaints-cont">
+                    <img className="complaints-RowIcon" src={Profile} alt="Profile icon"></img>
+                    <p className="complaints-p1"><b>{complaint.respondent_name}</b></p>
+                    </div>
+                    <div className="complaints-cont">
+                    <img className="complaints-RowIcon" src={Tel} alt="Telephone icon"></img>
+                    <p className="complaints-p2">{complaint.respondent_address}</p>
+                    </div>
+                    <div className = "complaints-cont">
+                    <img className = "complaints-RowIcon" src = {Location} />
+                    <p className="complaints-p3"><b>Relationship:</b> {complaint.relationship}</p>
+                    </div>
+                    <div className="complaints-cont">
+                        <img className="complaints-RowIcon" src={Warning}></img>
+                        <p><b>Incident date:</b> {complaint.incident_date}</p>
+                    </div>
+                </div>
+
+                <div className="complaints-ThirdRow">
+                    <div className = "complaints-cont">
+                    <img className = "complaints-RowIcon" src = {description} />
+                    <p className="complaints-p4"><b>Description: </b> {complaint.description}</p>
+                    </div>
                     <div className="complaints-cont">
                         <img className="complaints-RowIcon" src={Calendar} alt="Calendar Icon"></img>
-                        <p>Submitted: 2024-01-15</p>
+                        <p className="complaint-submit"><b>Submitted: </b> {complaint.date}</p>
                     </div>
+                    {complaint.assigned_to && (
+                    <div className="complaints-cont">
+                        <img className ="complaints-RowIcon" src = {assigncon}  alt="Calendar Icon"></img>
+                        <p className="complaint-submit"><b>Assigned to: </b> {complaint.assigned_to}</p>
+                    </div>
+                    )}
+                    {/* <div className="complaints-cont">
+                        {complaint.status === "resolved" && (
+                        <div className = "Res-Res">
+                            <div className = "resolution-header">
+                            <p className="complaint-submit"><b>Resolution: </b> {complaint.resolution}</p>
+                            </div>
+                            <p className="complaint-submit"><b>Resolved on: </b> {complaint.resolve_date}</p>
+                        </div>
+                        )}
+                    </div> */}
+                </div>
                 </div>
             </div>
         </div>
+            );
+        })}
+
+        {assign && (
+            <Assign 
+            assigned = {assign}
+            onClose={() => setAssign(null)}
+            refreshList = {fetchComplaints}
+            />
+        )}
+
+        {resolve &&(
+            <Resolve
+             resolved = {resolve}
+             onClose ={() => setResolve(null)}
+             refreshList = {fetchComplaints}
+            />
+        )}
+
+        {/* {dismiss && (
+            <Dismiss 
+            dismissed = {dismiss}
+            onClose ={() => setDismiss(null)}
+            refreshList = {fetchComplaints}
+            />
+        )} */}
         </div>
+
+    
         </>
     );
 }

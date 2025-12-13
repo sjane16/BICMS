@@ -1,23 +1,67 @@
-import logo from './assets/BICMS_logo.png'
+import logo from './assets/BICMS_logo.png';
+import Logout from './Logout.jsx';
+import {useState, useEffect} from "react";
+import {useNavigate} from "react-router-dom";
+
 function HeaderLog(){
+    const name = localStorage.getItem('fullname') || 'Guest';
+    const role = localStorage.getItem('role' || ' ').trim().toLowerCase();
+    const [isOverlayOpen, setIsOverlayOpen] = useState (false);
+    const navigate = useNavigate();
+    const [profileImage, setProfileImage] = useState(null);
+
+    const handleSettings = () => {
+        if(role === "admin"){
+            navigate("/adminprofile");
+        }else if(role === "user"){
+            navigate("/residentprofile")
+        }
+    }
+
+    useEffect(() => {
+      fetch("http://localhost/bicms_backend/reflectpic.php", {
+        method: "GET",
+        credentials: "include"
+      })
+      .then(res => res.json())
+      .then(data =>{
+        const imagePath = `http://localhost/bicms_backend/profile_pic/${data.profile_picture}`;
+        setProfileImage(imagePath);
+      })
+      .catch(err => console.error("Fetch Error:", err))
+    }, [localStorage.getItem("profileRefresh")]);
+
     return(
-            <>
-                <div className="header">
-                    <div className="hleft">
-                    <img className="logo" src={logo}alt="BICMS logo"></img>
+        <>
+            <div className="header">
+                <div className="hleft">
+                    <img className="logo" src={logo} alt="BICMS logo"></img>
                     <p className="title"><b>Barangay Issuance and Complaint Management System</b></p>
-                    </div>
-                     <div className="b">
-                        <h1 className="login">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-person" viewBox="0 0 16 16">
-                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
-                            </svg>
-                            &nbsp; Juan Cruz
-                        </h1>
-                        <button className="buttonlog"><b>➜]           Log-out</b></button>
-                    </div>
                 </div>
-            </>
-        );
+                <div className="b">
+                    {/* <h1 className="login">
+                        &nbsp; Juan Cruz
+                    </h1> */}
+                    <button className="login" onClick = {handleSettings}>
+                            <div className="profile-wrap">
+                         <img className ="profilepic" src={profileImage} alt="profile picture"/>
+                            &nbsp; 
+                            <h2 className = "h2-profile-wrap">&nbsp; {name}</h2>
+                           </div>
+                    </button>
+                    
+                    <button
+                        className="buttonlog"
+                        onClick={() => setIsOverlayOpen(true)}
+                    >
+                        <b>➜]           Log-out</b>
+                    </button>
+                </div>
+            </div>
+            {isOverlayOpen && (
+                <Logout onClose={() => setIsOverlayOpen(false)} />
+            )}
+        </>
+    );
 }
-export default HeaderLog
+export default HeaderLog;

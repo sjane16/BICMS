@@ -16,8 +16,16 @@ html, body {
   font-family: 'Poppins', sans-serif;
   padding: 15px 20px;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
+.top-margin-FirstRow{
+  margin-top: 15px;
+}
+
+.top-margin-FirstRow2{
+  margin-top: 30px;
+} 
 .complaints-create-complaints .complaints-heading h1 {
   margin: 0;
   font-size: 30px;
@@ -97,7 +105,7 @@ html, body {
 .complaints-cert1 {
   outline: 1px solid #ccc;   
   border-radius: 8px;
-  padding: 30px;
+  padding: 60px;
   margin: 20px;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -201,7 +209,25 @@ html, body {
   object-fit: contain;
 }
 
-.complaints-FirstRow, .complaints-SecondRow {
+.complaints-ThirdRow{
+  padding:0;
+  margin: 0;
+}
+
+.complaints-ThirdRow .complaints-cont{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.complaints-ThirdRow .complaints-RowIcon{
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+
+.complaints-FirstRow, .complaints-SecondRow, .complaints-ThirdRow {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -210,7 +236,16 @@ html, body {
   margin-bottom: 20px;
 }
 
-.complaints-FirstRow p, .complaints-SecondRow p {
+.complaints-FirstRow, .complaints-ThirdRow {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.complaints-FirstRow p, .complaints-SecondRow p, .complaints-ThirdRow p {
   margin: 0;
   font-size: 14px;
   color:gray;
@@ -235,6 +270,16 @@ html, body {
   gap: 10px;
 }
 
+.complaints-SecondRow {
+  margin-left: 350px;
+  margin-top: -177px;
+}
+
+.complaints-ThirdRow {
+  margin-left: 700px;
+  margin-top: -116px;
+}
+
 .complaints-SecondRow .complaints-RowIcon{
   width: 20px;
   height: 20px;
@@ -248,4 +293,20 @@ html, body {
 
 .complaints-SecondRow .complaints-p4{
   color: black;
+}
+
+.complaints-cont .complaint-submit{
+  color: black;
+}
+
+.resolution-header {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.Res-Res {
+  background-color: rgb(239, 234, 234);
+  padding: 10px;
+  border-radius: 10px;
 }
