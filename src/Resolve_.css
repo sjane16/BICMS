@@ -349,6 +349,7 @@
     justify-content: center;
     width: 90%;
     gap: 10px;
+    margin-top: 10px;
 }
 
 .keydates{
@@ -357,6 +358,7 @@
     flex-direction: column;
 }
 
+.actualcompliance,
 .deadline,
 .returndate {
     padding: 10px;
@@ -428,6 +430,43 @@
     background:linear-gradient(135deg, #3c51d6 0%, #341da7 100%);
     color: white;
 }
+
+.resolve-body-comp{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resolve-body-comp input{
+  padding: 10px;
+    width: 90%;
+    border-radius: 10px;
+    border: 1px solid gray;
+    margin-bottom: 2%;
+}
+
+.resolve-body-comp input::placeholder{
+  font-size: 12px;
+}
+
+.resolve-body-comp input:focus{
+    border: 1px solid rgb(69, 74, 204);
+    outline: none;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.resolve-body-comp .h2-resolve-header{
+    align-self: flex-start;
+    margin-left: 25px;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+
+
 
 /* FOR THE DOWNLOADING OF REPORT */
 
