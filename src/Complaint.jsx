@@ -9,18 +9,18 @@ import Calendar from './assets/calendar.png'
 import React, { useState, useEffect } from 'react';
 import Assign from './Assign.jsx';
 import Resolve from './Resolve_.jsx';
-import Dismiss from './Dismiss.jsx';
 import Location from './assets/location.png';
 import description from './assets/description.png';
 import assigncon from './assets/assigned.png';
 import resolution from './assets/resolution.png';
+import ActualCompDate from './ActualCompDate.jsx';
 
 function Complaint(){
     const [complaints, setComplaints] = useState([]);
     const [search, setSearch] = useState("");
     const [assign, setAssign] = useState(null);
     const [resolve, setResolve] = useState(null);
-    const [dismiss, setDismiss] = useState(null);
+    const [actualCDate, setActualCDate] = useState(null);
     const [status, setStatus] = useState("");
 
     const fetchComplaints = () => {
@@ -39,7 +39,7 @@ function Complaint(){
 
     const filterComp = complaints
     .filter(complaint => {
-        if(status === "") return complaint.status != "dismissed";
+        if(status === "") return complaint.status != "escalated";
         return complaint.status === status;
     })
     .filter(complaint =>{
@@ -77,9 +77,10 @@ function Complaint(){
                 <select value={status} onChange ={(e) => setStatus(e.target.value)}>
                     <option value="" >All Status</option>
                     <option value="pending">Pending</option>
-                    <option value="in progress">In Progress</option>
+                     <option value="in progress">In Progress</option>
+                    <option value="monitoring">Monitoring</option>
                     <option value="resolved">Resolved</option>
-                    <option value="dismissed">Dismissed</option>
+                    <option value="dismissed">Escalated</option>
                 </select>
             </div>
         </div>
@@ -103,7 +104,9 @@ function Complaint(){
                     {complaint.status === "in progress"  && (
                     <button className="complaints-statbutton" onClick={() => setResolve(complaint)}>Resolve</button>
                     )}
-                    {/* <button className="complaints-statbutton" onClick ={() => setDismiss(complaint)}>File Action</button> */}
+                    {["monitoring"].includes(complaint.status) && (
+                    <button className="complaints-statbutton" onClick ={() => setActualCDate(complaint)}>Actual Compliance Date</button>
+                    )}
                     </div>
                 </div>
 
@@ -165,16 +168,96 @@ function Complaint(){
                         <p className="complaint-submit"><b>Assigned to: </b> {complaint.assigned_to}</p>
                     </div>
                     )}
-                    {/* <div className="complaints-cont">
-                        {complaint.status === "resolved" && (
+                    <div className="complaints-cont">
+                        {["monitoring", "resolved", "dismissed", "escalated"].includes(complaint.status) && (
                         <div className = "Res-Res">
                             <div className = "resolution-header">
-                            <p className="complaint-submit"><b>Resolution: </b> {complaint.resolution}</p>
+                            <p className="complaint-submit"><b>Resolution Type: </b> {complaint.resolution_type}</p>
                             </div>
-                            <p className="complaint-submit"><b>Resolved on: </b> {complaint.resolve_date}</p>
+                            {["Amicable Settlement (Kasunduang Pag-aayos)", "Arbitration Award"].includes(complaint.resolution_type) && (
+                            <div className="amicable/arbitration">
+                            <p className="complaint-submit"><b>Resolution Date: </b> {complaint.resolution_date}</p>
+                            <p className="complaint-submit"><b>Terms and Conditions: </b> {complaint.Terms_Conditions}</p>
+
+                            {complaint.Terms_Conditions === "Monetary Claim Settlement" &&(
+                            <div className="monetary">
+                            <p className="complaint-submit"><b>Amount: </b> {complaint.amount}</p>
+                            <p className="complaint-submit"><b>Type of Payment: </b> {complaint.payment_type}</p>
+                            {complaint.payment_type === "Full Payment" && (
+                            <p className="complaint-submit"><b>Payment Date: </b> {complaint.compliance_date}</p>
+                            )}
+                            {complaint.payment_type === "Partial Payment" && (
+                            <p className="complaint-submit"><b>Installment Details: </b> {complaint.description}</p>
+                            )}
+                            </div>
+                            )}
+
+                            {complaint.Terms_Conditions === "Return/Restitution of Property" && (
+                                <div className="return">
+                                    <p className="complaint-submit"><b>Item Description: </b> {complaint.description}</p>
+                                    <p className="complaint-submit"><b>Return Date: </b> {complaint.compliance_date}</p>
+                                </div>
+                            )}
+
+                            {complaint.Terms_Conditions === "Performance of Service/Action" && (
+                                <div className="service">
+                                    <p className="complaint-submit"><b>Service Description: </b> {complaint.description}</p>
+                                     <p className="complaint-submit"><b>Deadline: </b> {complaint.compliance_date}</p>
+                                </div>
+                            )}
+
+                            {complaint.Terms_Conditions === "Apology/Formal Reconciliation" && (
+                                <div className="apology">
+                                     <p className="complaint-submit"><b>Date of Apology: </b> {complaint.compliance_date}</p>
+                                </div>
+                            )}
+
+                            {complaint.Terms_Conditions === "Agreement to Vacate Property" && (
+                                <div className="vacate">
+                                    <p className="complaint-submit"><b>Move-out Date: </b> {complaint.compliance_date}</p>
+                                </div>
+                            )}
+
+                            {complaint.Terms_Conditions === "Acknowledgement of Debt" && (
+                                <div className="debt">
+                                    <p className="complaint-submit"><b>Total Amount of Debt: </b> {complaint.amount}</p>
+                                    <p className="complaint-submit"><b>Payment Plan: </b> {complaint.description}</p>
+                                </div>
+                            )}
+
+                            {complaint.Terms_Conditions === "Others" && (
+                                <div className="others">
+                                    <p className="complaint-submit"><b>Description: </b> {complaint.description}</p>
+                                </div>
+                            )}
+                                <p className="complaint-submit"><b>Resolution Status: </b> {complaint.resolution_status}</p>
+                                {complaint.resolution_status === "Complied" && (
+                                    <p className="complaint-submit"><b>Actual Compliance Date: </b> {complaint.actualcompliance_date}</p>
+                                )}
+                                
+                            </div>
+                            )}
+
+                            {complaint.resolution_type === "Withdrawal of Complaint" && (
+                                <div className="withdrawal">
+                                    <p className="complaint-submit"><b>Resolution Type: </b> {complaint.resolution_type}</p>
+                                    <p className="complaint-submit"><b>Date of Withdrawal: </b> {complaint.resolution_date}</p>
+                                    <p className="complaint-submit"><b>Resolution Status: </b> {complaint.resolution_status}</p>
+                                </div>
+                            )}
+
+                            {complaint.resolution_type === "Referral to Court/Proper Agency" &&(
+                                <div className="referral">
+                                    <p className="complaint-submit"><b>Resolution Type: </b> {complaint.resolution_type}</p>
+                                    <p className="complaint-submit"><b>Date of Issuance: </b> {complaint.resolution_date}</p>
+                                    <p className="complaint-submit"><b>Resolution Status: </b> {complaint.resolution_status}</p>
+                                </div>
+                            )}
+
+                            
                         </div>
                         )}
-                    </div> */}
+                    </div>
                 </div>
                 </div>
             </div>
@@ -198,13 +281,15 @@ function Complaint(){
             />
         )}
 
-        {/* {dismiss && (
-            <Dismiss 
-            dismissed = {dismiss}
-            onClose ={() => setDismiss(null)}
+        {actualCDate && (
+            <ActualCompDate 
+            actualdate = {actualCDate}
+            onClose ={() => setActualCDate(null)}
             refreshList = {fetchComplaints}
             />
-        )} */}
+        )}
+
+        
         </div>
 
     

@@ -4,6 +4,33 @@ import {useState} from 'react';
 
 function Assign ({assigned, onClose, refreshList}) {
     const [assignComp, setAssignComp] = useState("");
+    const [generateSummon, setGenerateSummon] = useState("");
+    const [hearingDate, setHearingDate] = useState("");
+    const [hearingTime, setHearingTime] = useState("");
+    const [timeError, setTimeError] = useState("");
+
+    const saveTime = (e) => {
+        const newTime = e.target.value;
+        setHearingTime(newTime);
+
+        if(!newTime){
+            setTimeError("");
+            return;
+        }
+
+        if(newTime < "14:00" || newTime > "17:00"){
+            setTimeError("Please schedule between 2:00 pm and 5:00 pm");
+        }else{
+            setTimeError("");
+        }
+    };
+
+    const today = new Date();
+    const year = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+    const min = `${year}-${mm}-${dd}`;
+    const max = `${year}-12-31`;
 
     const handleCancel = () => {
         onClose();
@@ -47,7 +74,9 @@ function Assign ({assigned, onClose, refreshList}) {
                     id: assigned.id,
                     complainant_name: assigned.fullname,
                     respondent_name: assigned.respondent_name,
-                    subject: assigned.subject
+                    subject: assigned.subject,
+                    hearingdate: hearingDate,
+                    hearingtime: hearingTime
                 })
             });
 
@@ -97,14 +126,80 @@ function Assign ({assigned, onClose, refreshList}) {
                         <option value="Dorida B. Zape">Dorida B. Zape</option>                       
                     </select>
                 </div>
+                
+
+                <div className="cont1">
+                    <div className="type-payment">
+                    <h2 className = "h2-resolve-headers">Would you like to generate a summon letter?</h2>
+                    <div className="radio-group">
+                    <div className="radio-option">
+                    <label className="type">
+                    <input
+                    type = "radio"
+                    className = "type_resolve"
+                    name ="type"
+                    value="Yes"
+                    onChange={(e) => setGenerateSummon(e.target.value)}
+                    />
+               
+                   Yes</label>
+                    </div>
+                    <div className="radio-option">
+                     <label className="type">
+                    <input
+                    type = "radio"
+                    className = "type_resolve"
+                    name ="type"
+                    value="No"
+                    onChange={(e) => setGenerateSummon(e.target.value)}
+                    />
+                   No </label>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+
+
+                {generateSummon === "Yes" && (
+                <div>
+                <div className="summonform">
+                        <div className="cont">
+                            <h2 className = "h2-resolve-headers">Hearing/Appearance Date and Time:</h2>
+                            <input
+                                className="returndate"
+                                type = "date"
+                                value={hearingDate}
+                                min={min}
+                                max={max}
+                                onChange={(e) => setHearingDate(e.target.value)}
+                            />
+                            <input
+                                className="returndate"
+                                type = "time"
+                                value={hearingTime}
+                                min= "14:00"
+                                max= "17:00"
+                                onChange={saveTime}
+                            />
+                            {timeError && (
+                                <p style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>
+                                    {timeError}
+                                </p>
+                            )}
+                        </div>
+                    </div>
+
+                    <div className="cont">
+                        <h2 className = "h2-resolve-headers">Generate Summon Letter:</h2>
+                        <button className="fileaction" onClick={downloadSummon}>Generate Official Summon Letter</button>
+                    </div>
 
                 <div className = "resolve-footer">
                     <button className = "b1-resolve" onClick={handleCancel}>Cancel</button>
-                    <button className = "b2-resolve" onClick={(e) => {
-                        handleSave(e);
-                        downloadSummon();
-                    }}>Assign the task</button>
+                    <button className = "b2-resolve" onClick={handleSave}>Assign the task</button>
                 </div>
+                </div>
+                )}
             </div>
         </div>
     );
