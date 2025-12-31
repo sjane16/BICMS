@@ -102,7 +102,6 @@ function Resolve ({onClose, resolved, refreshList}) {
 
             if(data.success){
                 alert(data.message);
-                setResolution("");
                 refreshList();
                 onClose();
             } else {
@@ -202,7 +201,7 @@ function Resolve ({onClose, resolved, refreshList}) {
                 }
 
             
-                {compliance === "Monetary Claim Settlement" &&
+                {isAgreement && compliance === "Monetary Claim Settlement" &&
                 <div className="cont1">
                     <h2 className = "h2-resolve-headers">Total Amount</h2>
                     <input
@@ -270,7 +269,7 @@ function Resolve ({onClose, resolved, refreshList}) {
                 </div>
                 }
             </div>
-                {compliance === "Return/Restitution of Property" &&
+                {isAgreement && compliance === "Return/Restitution of Property" &&
                     <div className="return">
                         <div className="cont">
                             <h2 className = "h2-resolve-headers">Item Description</h2>
@@ -297,7 +296,7 @@ function Resolve ({onClose, resolved, refreshList}) {
                     </div>
                 }
 
-                {compliance === "Performance of Service/Action" &&
+                {isAgreement && compliance === "Performance of Service/Action" &&
                  <div className="service">
                         <div className="cont">
                             <h2 className = "h2-resolve-headers">Description of service</h2>
@@ -324,7 +323,7 @@ function Resolve ({onClose, resolved, refreshList}) {
                     </div>
                 }
 
-                {compliance === "Apology/Formal Reconciliation" &&
+                {isAgreement && compliance === "Apology/Formal Reconciliation" &&
                 <div classname="apology">
                     <div className="cont">
                             <h2 className = "h2-resolve-headers">Date of Apology</h2>
@@ -340,7 +339,7 @@ function Resolve ({onClose, resolved, refreshList}) {
                 </div>
                 }
 
-                {compliance === "Agreement to Vacate Property" &&
+                {isAgreement && compliance === "Agreement to Vacate Property" &&
                 <div classname="move-out">
                     <div className="cont">
                             <h2 className = "h2-resolve-headers">Move-out Date</h2>
@@ -356,7 +355,7 @@ function Resolve ({onClose, resolved, refreshList}) {
                 </div>
                 }
 
-                {compliance === "Acknowledgement of Debt" &&
+                {isAgreement && compliance === "Acknowledgement of Debt" &&
                 <div className="debt">
                     <div className="cont">
                          <h2 className = "h2-resolve-headers">Total Debt Amount</h2>
@@ -383,7 +382,7 @@ function Resolve ({onClose, resolved, refreshList}) {
                 </div>
                 }
 
-                {compliance === "Others" &&
+                {isAgreement && compliance === "Others" &&
                 <div className="others">
                     <div className="cont">
                         <h2 className = "h2-resolve-headers">Description</h2>
@@ -441,7 +440,7 @@ function Resolve ({onClose, resolved, refreshList}) {
 
                 <div className = "resolve-footer1">
                     <button className = "b1-resolve" onClick={handleCancel}>Cancel</button>
-                    <button className = "b2-resolve">Mark as Resolved</button>
+                    <button className = "b2-resolve"onClick={handleSave}>Save</button>
                 </div>
             </div>
 

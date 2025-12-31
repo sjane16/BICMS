@@ -69,6 +69,8 @@ function Residentpage(){
                     <th>Contact</th>
                     <th>Occupation</th>
                     <th>Remarks</th>
+                    <th>Total Complaints Made</th>
+                    <th>Total Certificates Requested</th>
                     <th></th>
                 </tr>
             </thead>
@@ -87,6 +89,8 @@ function Residentpage(){
                     <td>{resident.contact}</td>
                     <td>{resident.occupation}</td>
                     <td>{resident.remarks}</td>
+                    <td>{resident.complaint_count}</td>
+                    <td>{resident.certificate_count}</td>
                     <td>
                         <div className="editdelete-cont">
                         <button className="ed-b">

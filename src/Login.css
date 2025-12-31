@@ -1,6 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+}
 
 * {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* LOGIN PAGE SPECIFIC FIX */
+.login-page-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  z-index: 9999;
+  background: white; 
+}
+
+/* * {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
@@ -13,7 +38,7 @@
   width: 100%;
   overflow: hidden;
   margin-top: -100px;
-}
+} */
 
 /* === LEFT SIDE - WELCOME SECTION === */
 .welcome-container {

@@ -1,15 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+
 html, body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
+  height: 100%;
+
 }
+
+ ::-webkit-scrollbar-track {
+  background-color: #fafafa;
+} 
 
 .resident-page{
     margin-top: 20px;
     margin-left:10px;
     padding: 15px 20px;
+    
 }
+
+
+
 
 .resident-title{
     display: flex;
@@ -19,16 +30,22 @@ html, body {
     margin-left: -20px;
 }
 
+
 .table-design {
   transform: scale(0.93);
   margin-left: -60px;
   width: 80vw;
+  /* overflow-x: auto; */
 }
+
+
 
 table {
   font-size: 15px;
-  
+ 
 }
+
+
 
 
 .resident-search {
@@ -39,6 +56,8 @@ table {
 }
 
 
+
+
 .resident-search img {
   width: 20px;
   height: 20px;
@@ -46,6 +65,7 @@ table {
   position: relative;
   right: 50px;
 }
+
 
 .resident-search input {
   width: 300px;
@@ -57,9 +77,11 @@ table {
   right: 40px;
 }
 
+
 .resident-search input:focus {
-  outline: none; 
+  outline: none;
 }
+
 
 .resident-searchFunction {
   display: flex;
@@ -70,10 +92,13 @@ table {
 }
 
 
+
+
 .resident-searchFunction:focus-within {
   border-color: #333;
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
+
 
 .resident-search .resident-Status select {
   outline-color: #ccc;
@@ -84,6 +109,7 @@ table {
   border-radius: 5px;
 }
 
+
 .resident-add {
   background-color: black;
   color: white;
@@ -92,7 +118,7 @@ table {
   border: none;
   cursor: pointer;
   font-size: 14px;
-  font-weight: 500;     
+  font-weight: 500;    
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
   top: 2px;
@@ -101,21 +127,28 @@ table {
   margin-left: 14px;
 }
 
+
 .resident-page table{
   margin-top: 40px;
   width: 98.5%;
   border-collapse: collapse;
 }
 
+
 .resident-page th, td{
   border: 1px solid black;
   padding: 8px;
   text-align: center;
-}
+} 
+
+
+
 
 .resident-page th {
   background-color: #f4f4f4;
 }
+
+
 
 
 .editdelete-cont{
@@ -125,7 +158,9 @@ table {
   gap: 10px;
   align-items: center;
 
+
 }
+
 
 .editdelete{
   width: 20px;
@@ -134,7 +169,11 @@ table {
   margin: 0;
 }
 
+
 .ed-b{
   background-color: white;
   border: none;
 }
+
+
+
