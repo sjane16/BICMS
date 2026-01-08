@@ -37,10 +37,11 @@ function Assign ({assigned, onClose, refreshList}) {
     };
 
     const handleSave = async(e) => {
+        const API_URL = import.meta.env.VITE_API_URL;
         e.preventDefault();
 
         try{
-            const res = await fetch("http://localhost/bicms_backend/assignofficial.php",{
+            const res = await fetch(`${API_URL}/assignofficial.php`,{
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 credentials: "include",
@@ -66,8 +67,9 @@ function Assign ({assigned, onClose, refreshList}) {
     };
 
     const downloadSummon = async () =>{
+        const API_URL = import.meta.env.VITE_API_URL;
         try{
-            const res = await fetch("http://localhost/bicms_backend/generatesummon.php", {
+            const res = await fetch(`${API_URL}/generatesummon.php`, {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify({

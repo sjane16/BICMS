@@ -13,7 +13,8 @@ function Reportcert(){
     const[repinfo, setRepInfo] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost/bicms_backend/certreport.php", {
+            const API_URL = import.meta.env.VITE_API_URL;
+        fetch(`${API_URL}/certreport.php`, {
             method: "GET",
             headers: {"Content-Type" : "application/json"},
             credentials: "include"
@@ -29,7 +30,8 @@ function Reportcert(){
     }, []);
 
     const fetchrepinfo = () => {
-    fetch("http://localhost/bicms_backend/reportinfocert.php", {
+            const API_URL = import.meta.env.VITE_API_URL;
+    fetch(`${API_URL}/reportinfocert.php`, {
             method: "GET",
             headers: {"Content-Type" : "application/json"},
             credentials: "include"

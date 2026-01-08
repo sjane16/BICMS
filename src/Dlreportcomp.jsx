@@ -7,8 +7,9 @@ function Dlreportcomp({ onClose }) {
     };
 
     const downloadCertReport = async () => {
+            const API_URL = import.meta.env.VITE_API_URL;
         try {
-            const res = await fetch("http://localhost/bicms_backend/generatecompreport.php", {
+            const res = await fetch(`${API_URL}/generatecompreport.php`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include"

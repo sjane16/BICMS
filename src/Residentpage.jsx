@@ -15,7 +15,8 @@ function Residentpage(){
     const [deleteResident, setDeleteResident] = useState(null);
 
     const fetchResidents = () =>{
-        fetch("http://localhost/bicms_backend/resident_table.php")
+            const API_URL = import.meta.env.VITE_API_URL;
+        fetch(`${API_URL}/resident_table.php`)
         .then(res => res.json())
         .then(data => setResidents(data));
     }

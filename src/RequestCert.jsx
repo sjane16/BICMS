@@ -13,7 +13,8 @@ function RequestCert ({onClose, refreshList}) {
     })
 
     useEffect(() => {
-        fetch("http://localhost/bicms_backend/reflectform.php", {
+            const API_URL = import.meta.env.VITE_API_URL;
+        fetch(`${API_URL}/reflectform.php`, {
             method: "GET",
             credentials: "include"
         })
@@ -41,10 +42,11 @@ function RequestCert ({onClose, refreshList}) {
     const finalPurpose = purpose === "Others" ? customPurpose : purpose;
 
     const handleRequest = async(e) => {
+            const API_URL = import.meta.env.VITE_API_URL;
         e.preventDefault();
 
         try{
-            const res = await fetch("http://localhost/bicms_backend/requestcert.php", {
+            const res = await fetch(`${API_URL}/requestcert.php`, {
                 method: "POST",
                 credentials: "include",
                 headers: {"Content-Type" : "application/json"},

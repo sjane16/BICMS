@@ -67,7 +67,10 @@ function Login() {
     }
   };
 
+  
+
   const handleRegister = async (e) => {
+    const API_URL = import.meta.env.VITE_API_URL;
     e.preventDefault();
     
     setErrors({ passwordMatch: "", registerError: "", loginError: "" });
@@ -78,7 +81,7 @@ function Login() {
     }
     
     try {
-      const res = await fetch("http://localhost/bicms_backend/register.php", {
+      const res = await fetch(`${API_URL}/register.php`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ lastName, firstName, middleName, email, password }),
@@ -116,12 +119,13 @@ function Login() {
   };
 
   const handleLogin = async (e) => {
+    const API_URL = import.meta.env.VITE_API_URL;
     e.preventDefault();
     
     setErrors({ passwordMatch: "", registerError: "", loginError: "" });
     
     try {
-      const res = await fetch("http://localhost/bicms_backend/login.php", {
+      const res = await fetch(`${API_URL}/login.php`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

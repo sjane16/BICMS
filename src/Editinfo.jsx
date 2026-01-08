@@ -26,9 +26,10 @@ function Editinfo({resident, onClose, refreshList}) {
     };
 
     const editRes = async (e) => {
+            const API_URL = import.meta.env.VITE_API_URL;
         e.preventDefault();
         try{
-            const res = await fetch("http://localhost/bicms_backend/editres_info.php",{
+            const res = await fetch(`${API_URL}/editres_info.php`,{
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify({

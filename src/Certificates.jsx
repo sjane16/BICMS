@@ -15,7 +15,8 @@ function Certificates() {
 
 
     useEffect(() => {
-        fetch("http://localhost/bicms_backend/trackcert.php", {
+       const API_URL = import.meta.env.VITE_API_URL;
+        fetch(`${API_URL}/trackcert.php`, {
             method: "POST",
             credentials: "include"
         })
@@ -40,7 +41,8 @@ function Certificates() {
     });
 
     const updateStatus = (id, newStatus) => {
-      fetch("http://localhost/bicms_backend/updatestatuscert.php", {
+       const API_URL = import.meta.env.VITE_API_URL;
+      fetch(`${API_URL}/updatestatuscert.php`, {
         method: "POST",
         headers: {"Content-Type" : "application/json"},
         credentials: "include",
@@ -65,6 +67,7 @@ function Certificates() {
     };
 
     const downloadCert = async (cert) =>{
+       const API_URL = import.meta.env.VITE_API_URL;
       
       try{
         const resData = {
@@ -75,7 +78,7 @@ function Certificates() {
           type: cert.type
         };
 
-        const res = await fetch("http://localhost/bicms_backend/generatecert.php", {
+        const res = await fetch(`${API_URL}/generatecert.php`, {
           method: "POST",
           headers: {"Content-Type" : "application/json"},
           body: JSON.stringify(resData)

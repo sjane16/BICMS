@@ -9,10 +9,11 @@ function Deleteinfo ({onClose, resident, refreshList}) {
     };
 
     const handleConfirm = async(e) => {
+            const API_URL = import.meta.env.VITE_API_URL;
         e.preventDefault();
 
         try{
-            const res = await fetch("http://localhost/bicms_backend/deleteres_info.php", {
+            const res = await fetch(`${API_URL}/deleteres_info.php`, {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify({

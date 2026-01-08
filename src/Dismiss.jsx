@@ -7,8 +7,9 @@ function Dismiss ({onClose, dismissed, refreshList}) {
     };
 
     const handleDismiss = async(e) => {
+            const API_URL = import.meta.env.VITE_API_URL;
         try{
-            const res = await fetch("http://localhost/bicms_backend/dismiss.php", {
+            const res = await fetch(`${API_URL}/dismiss.php`, {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 credentials: "include",
@@ -32,8 +33,9 @@ function Dismiss ({onClose, dismissed, refreshList}) {
     }
 
     const downloadCertAction = async () =>{
+            const API_URL = import.meta.env.VITE_API_URL;
         try{
-            const res = await fetch("http://localhost/bicms_backend/generatefileaction.php", {
+            const res = await fetch(`${API_URL}/generatefileaction.php`, {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify({

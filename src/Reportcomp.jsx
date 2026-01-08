@@ -14,7 +14,8 @@ function Reportcomp(){
     const[repinfocomp, setRepInfoComp] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost/bicms_backend/complaintreports.php", {
+            const API_URL = import.meta.env.VITE_API_URL;
+        fetch(`${API_URL}/complaintreports.php`, {
             method: "GET",
             headers: {"Content-Type" : "application/json"},
             credentials: "include"
@@ -30,7 +31,8 @@ function Reportcomp(){
     }, []);
 
     const fetchrepinfo = () => {
-    fetch("http://localhost/bicms_backend/reportinfocomp.php", {
+            const API_URL = import.meta.env.VITE_API_URL;
+    fetch(`${API_URL}/reportinfocomp.php`, {
             method: "GET",
             headers: {"Content-Type" : "application/json"},
             credentials: "include"

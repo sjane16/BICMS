@@ -12,7 +12,8 @@ function SystemOverview(){
     const [stats, setStats] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost/bicms_backend/systemoverview.php",{
+            const API_URL = import.meta.env.VITE_API_URL;
+        fetch(`${API_URL}/systemoverview.php`,{
             method: "GET",
             headers: {"Content-Type" : "application/json"},
             credentials: "include"

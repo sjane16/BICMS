@@ -62,11 +62,12 @@ function Resolve ({onClose, resolved, refreshList}) {
 
 
     const handleSave = async(e) => {
+            const API_URL = import.meta.env.VITE_API_URL;
         e.preventDefault();
 
 
         try{
-            const res = await fetch("http://localhost/bicms_backend/resolution.php",{
+            const res = await fetch(`${API_URL}/resolution.php`,{
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 credentials: "include",

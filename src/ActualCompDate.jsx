@@ -17,10 +17,11 @@ function ActualCompDate ({actualdate, onClose, refreshList}) {
     };
 
     const handleSave = async(e) => {
+        const API_URL = import.meta.env.VITE_API_URL;
         e.preventDefault();
 
         try{
-            const res = await fetch("http://localhost/bicms_backend/actualcompdate.php",{
+            const res = await fetch(`${API_URL}/actualcompdate.php`,{
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify({

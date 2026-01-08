@@ -8,8 +8,9 @@ function Logout ({onClose}) {
     const navigate = useNavigate();
 
     const handleLogout = async () =>{
+          const API_URL = import.meta.env.VITE_API_URL;
         try{
-            const response = await fetch("http://localhost/bicms_backend/logout.php", {
+            const response = await fetch(`${API_URL}/logout.php`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {

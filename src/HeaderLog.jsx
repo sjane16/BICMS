@@ -19,13 +19,14 @@ function HeaderLog(){
     }
 
     useEffect(() => {
-      fetch("http://localhost/bicms_backend/reflectpic.php", {
+            const API_URL = import.meta.env.VITE_API_URL;
+      fetch(`${API_URL}/reflectpic.php`, {
         method: "GET",
         credentials: "include"
       })
       .then(res => res.json())
       .then(data =>{
-        const imagePath = `http://localhost/bicms_backend/profile_pic/${data.profile_picture}`;
+        const imagePath = `${API_URL}/profile_pic/${data.profile_picture}`;
         setProfileImage(imagePath);
       })
       .catch(err => console.error("Fetch Error:", err))

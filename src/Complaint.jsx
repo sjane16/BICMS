@@ -24,7 +24,8 @@ function Complaint(){
     const [status, setStatus] = useState("");
 
     const fetchComplaints = () => {
-        fetch("http://localhost/bicms_backend/trackcomp.php", {
+        const API_URL = import.meta.env.VITE_API_URL;
+        fetch(`${API_URL}/trackcomp.php`, {
             method: "POST",
             credentials: "include"
         })

@@ -22,9 +22,10 @@ function Addresident({onClose, refreshList}) {
     const[remarks, setRemarks] = useState("");
 
     const handleAddRes = async (e) => {
+        const API_URL = import.meta.env.VITE_API_URL;
         e.preventDefault();
         try{
-            const res = await fetch("http://localhost/bicms_backend/addresident.php",{
+            const res = await fetch(`${API_URL}/addresident.php`,{
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify({lastName, firstName, middleName, gender, birthday, age, address, civilStatus, contactNumber, occupation, remarks}),

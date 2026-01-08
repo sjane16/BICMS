@@ -25,7 +25,8 @@ function Userdashboard() {
   const handleCloseRequestCert = () => setShowRequestCertModal(false);
 
   useEffect(() => {
-    fetch("http://localhost/bicms_backend/userdashboard.php", {
+        const API_URL = import.meta.env.VITE_API_URL;
+    fetch(`${API_URL}/userdashboard.php`, {
       method: "GET",
       credentials: "include",
     })
@@ -41,7 +42,8 @@ function Userdashboard() {
   }, []);
 
   const fetchComplaints = () => {
-    fetch("http://localhost/bicms_backend/userdashboardcomp.php", {
+        const API_URL = import.meta.env.VITE_API_URL;
+    fetch(`${API_URL}/userdashboardcomp.php`, {
       method: "GET",
       credentials: "include"
     })
@@ -54,7 +56,8 @@ function Userdashboard() {
   }, []);
 
   const fetchCertificates = () => {
-    fetch("http://localhost/bicms_backend/userdashboardcert.php", {
+        const API_URL = import.meta.env.VITE_API_URL;
+    fetch(`${API_URL}/userdashboardcert.php`, {
       method: "GET",
       credentials: "include"
     })

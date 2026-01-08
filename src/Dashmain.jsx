@@ -17,7 +17,8 @@ function Dashmain({ selectedPage, setSelectedPage }){
  })
 
  useEffect(() => {
-    fetch("http://localhost/bicms_backend/reflectcomplaintadmin.php", {
+    const API_URL = import.meta.env.VITE_API_URL;
+    fetch(`${API_URL}/reflectcomplaintadmin.php`, {
         method: "POST",
         credentials: "include"
     })
@@ -27,7 +28,8 @@ function Dashmain({ selectedPage, setSelectedPage }){
  }, [])
 
  useEffect(() => {
-    fetch("http://localhost/bicms_backend/reflectcertadmin.php", {
+        const API_URL = import.meta.env.VITE_API_URL;
+    fetch(`${API_URL}/reflectcertadmin.php`, {
         method: "POST",
         credentials: "include"
     })
@@ -37,7 +39,8 @@ function Dashmain({ selectedPage, setSelectedPage }){
  }, [])
 
  useEffect(() =>{
-    fetch("http://localhost/bicms_backend/dashboardstats.php",{
+        const API_URL = import.meta.env.VITE_API_URL;
+    fetch(`${API_URL}/dashboardstats.php`,{
         method: "POST",
         credentials: "include"
     })

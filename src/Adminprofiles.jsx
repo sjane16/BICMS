@@ -35,11 +35,13 @@ function Adminprofile({onClose}) {
     };
 
     const handleSaveChanges = () => {
+        const API_URL = import.meta.env.VITE_API_URL;
+
         if(profileImage){
             const uploadImage = new FormData();
             uploadImage.append("profileImage", profileImage);
 
-            fetch("http://localhost/bicms_backend/updateprofilepic.php", {
+            fetch(`${API_URL}/updateprofilepic.php`, {
                 method: "POST",
                 credentials: "include",
                 body: uploadImage
@@ -51,7 +53,7 @@ function Adminprofile({onClose}) {
             });
         }
 
-        fetch("http://localhost/bicms_backend/updateprofile.php", {
+        fetch(`${API_URL}/updateprofile.php`, {
             method: "POST",
             headers: {"Content-Type" : "application/json"},
             credentials: "include",
@@ -79,7 +81,8 @@ function Adminprofile({onClose}) {
     }
 
      useEffect(() => {
-        fetch("http://localhost/bicms_backend/getprofile.php", {
+        const API_URL = import.meta.env.VITE_API_URL;
+        fetch(`${API_URL}/getprofile.php`, {
             method: "GET",
             credentials: "include"
         })

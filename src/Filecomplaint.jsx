@@ -21,7 +21,8 @@ function Filecomplaint ({onClose, refreshList}) {
     const maxDate = `${currentYear}-${mm}-${dd}`;
 
     useEffect(() => {
-        fetch("http://localhost/bicms_backend/reflectform.php",{
+            const API_URL = import.meta.env.VITE_API_URL;
+        fetch(`${API_URL}/reflectform.php`,{
             method: "GET",
             credentials: "include"
         })
@@ -58,10 +59,11 @@ function Filecomplaint ({onClose, refreshList}) {
 
 
     const handleSubmit = async(e) => {
+            const API_URL = import.meta.env.VITE_API_URL;
         e.preventDefault();
 
         try{
-            const res = await fetch("http://localhost/bicms_backend/filecomp.php", {
+            const res = await fetch(`${API_URL}/filecomp.php`, {
                 method: "POST",
                 credentials: "include",
                 headers: {"Content-Type": "application/json"},
