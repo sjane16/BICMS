@@ -13,6 +13,8 @@ function Reportcomp(){
     const[downloadrep, setDownloadRep] = useState(null);
     const[repinfocomp, setRepInfoComp] = useState([]);
 
+    const fillWidth = Math.min(Math.max(stats.resolvedPercent || 0, 0), 100);
+
     useEffect(() => {
             const API_URL = import.meta.env.VITE_API_URL;
         fetch(`${API_URL}/complaintreports.php`, {
@@ -114,7 +116,7 @@ function Reportcomp(){
                                 <h1>{stats.resolvedPercent}%</h1>
                                 </div>
                                 <div className="report-progress-bar">
-                                    <div className="report-progress-fill" style={{width: `${stats.resolvedPercent}`}}></div>
+                                    <div className="report-progress-fill" style={{width: `${fillWidth}%`}}></div>
                                 </div>
                             </div>
                     </div>

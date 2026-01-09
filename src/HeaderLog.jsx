@@ -26,7 +26,7 @@ function HeaderLog(){
       })
       .then(res => res.json())
       .then(data =>{
-        const imagePath = `${API_URL}/profile_pic/${data.profile_picture}`;
+        const imagePath = `${API_URL}/uploads/${data.profile_picture}`;
         setProfileImage(imagePath);
       })
       .catch(err => console.error("Fetch Error:", err))
@@ -45,7 +45,14 @@ function HeaderLog(){
                     </h1> */}
                     <button className="login" onClick = {handleSettings}>
                             <div className="profile-wrap">
-                         <img className ="profilepic" src={profileImage} alt="profile picture"/>
+                         <img 
+                         className ="profilepic" 
+                         src={profileImage} 
+                         alt="profile picture"
+                         onError={(e) => {
+                            e.target.src = 'https://ui-avatars.com/api/?name=' + name + '&background=random';
+                         }}
+                         />
                             &nbsp; 
                             <h2 className = "h2-profile-wrap">&nbsp; {name}</h2>
                            </div>
