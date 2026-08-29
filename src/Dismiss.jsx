@@ -15,7 +15,7 @@ function Dismiss ({onClose, dismissed, refreshList}) {
                 credentials: "include",
                 body: JSON.stringify({
                     id: dismissed.id,
-                    status: "escalated"
+                    status: "dismissed"
                 })
             });
 
