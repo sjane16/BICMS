@@ -111,7 +111,7 @@ html, body {
   flex-direction: row;
   gap: 24px;
   justify-content: center;
-  align-items: stretch;
+  align-items: flex-start;
   width: 100%;
   flex-wrap: wrap;
 }
