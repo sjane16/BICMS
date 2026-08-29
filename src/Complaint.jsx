@@ -96,7 +96,7 @@ function Complaint(){
                         <img className="complaints-complainticon" src={Convo} alt="Complaint icon"></img>
                         <h1>C00{complaint.id}</h1>
                         </div>
-                        <span className="complaints-status-label ready">{complaint.status}</span>
+                        <span className="complaints-status-label ready">STATUS:{complaint.status}</span>
                     </div>
                     <div className="complaints-cert1Button">
                     {!complaint.assigned_to && (
