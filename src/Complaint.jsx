@@ -81,7 +81,7 @@ function Complaint(){
                      <option value="in progress">In Progress</option>
                     <option value="monitoring">Monitoring</option>
                     <option value="resolved">Resolved</option>
-                    <option value="dismissed">Escalated</option>
+                    <option value="escalated">Escalated</option>
                 </select>
             </div>
         </div>
