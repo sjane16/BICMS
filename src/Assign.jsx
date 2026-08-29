@@ -195,13 +195,12 @@ function Assign ({assigned, onClose, refreshList}) {
                         <h2 className = "h2-resolve-headers">Generate Summon Letter:</h2>
                         <button className="fileaction" onClick={downloadSummon}>Generate Official Summon Letter</button>
                     </div>
-
+                </div>
+                )}
                 <div className = "resolve-footer">
                     <button className = "b1-resolve" onClick={handleCancel}>Cancel</button>
                     <button className = "b2-resolve" onClick={handleSave}>Assign the task</button>
                 </div>
-                </div>
-                )}
             </div>
         </div>
     );
