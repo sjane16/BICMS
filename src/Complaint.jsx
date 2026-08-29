@@ -81,7 +81,7 @@ function Complaint(){
                      <option value="in progress">In Progress</option>
                     <option value="monitoring">Monitoring</option>
                     <option value="resolved">Resolved</option>
-                    <option value="escalated">Escalated</option>
+                    <option value="dismissed">Escalated</option>
                 </select>
             </div>
         </div>
@@ -96,7 +96,7 @@ function Complaint(){
                         <img className="complaints-complainticon" src={Convo} alt="Complaint icon"></img>
                         <h1>C00{complaint.id}</h1>
                         </div>
-                        <span className="complaints-status-label ready">STATUS:{complaint.status}</span>
+                        <span className="complaints-status-label ready">{complaint.status}</span>
                     </div>
                     <div className="complaints-cert1Button">
                     {!complaint.assigned_to && (
