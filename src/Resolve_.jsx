@@ -44,6 +44,7 @@ function Resolve ({onClose, resolved, refreshList}) {
     useEffect(() => {
     if(type === ""){
         setAgreementStatus("");
+        setComplaintStatus("");
     }else if(type === "Amicable Settlement (Kasunduang Pag-aayos)" || type === "Arbitration Award"){
         setAgreementStatus("pending compliance");
         setComplaintStatus("monitoring")
@@ -52,6 +53,7 @@ function Resolve ({onClose, resolved, refreshList}) {
         setComplaintStatus("resolved")
     }else{
         setAgreementStatus("file action issued");
+        setComplaintStatus("escalated");  
     }
     }, [type]);
 
