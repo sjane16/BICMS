@@ -162,7 +162,7 @@ html, body {
 
 /* Card Content */
 .user-card-content {
-  flex: 1;
+  flex: 0 0 auto;
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 8px;
