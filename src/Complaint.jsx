@@ -40,7 +40,7 @@ function Complaint(){
 
     const filterComp = complaints
     .filter(complaint => {
-        if(status === "") return complaint.status != "escalated";
+        if(status === "") return true;
         return complaint.status === status;
     })
     .filter(complaint =>{
@@ -96,7 +96,7 @@ function Complaint(){
                         <img className="complaints-complainticon" src={Convo} alt="Complaint icon"></img>
                         <h1>C00{complaint.id}</h1>
                         </div>
-                        <span className="complaints-status-label ready">{complaint.status}</span>
+                        <span className="complaints-status-label ready">{complaint.status === "dismissed" ? "escalated" : complaint.status}</span>
                     </div>
                     <div className="complaints-cert1Button">
                     {!complaint.assigned_to && (
@@ -241,7 +241,6 @@ function Complaint(){
 
                             {complaint.resolution_type === "Withdrawal of Complaint" && (
                                 <div className="withdrawal">
-                                    <p className="complaint-submit"><b>Resolution Type: </b> {complaint.resolution_type}</p>
                                     <p className="complaint-submit"><b>Date of Withdrawal: </b> {complaint.resolution_date}</p>
                                     <p className="complaint-submit"><b>Resolution Status: </b> {complaint.resolution_status}</p>
                                 </div>
@@ -249,7 +248,6 @@ function Complaint(){
 
                             {complaint.resolution_type === "Referral to Court/Proper Agency" &&(
                                 <div className="referral">
-                                    <p className="complaint-submit"><b>Resolution Type: </b> {complaint.resolution_type}</p>
                                     <p className="complaint-submit"><b>Date of Issuance: </b> {complaint.resolution_date}</p>
                                     <p className="complaint-submit"><b>Resolution Status: </b> {complaint.resolution_status}</p>
                                 </div>
