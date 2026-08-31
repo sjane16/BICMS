@@ -343,6 +343,32 @@ and facilitate your request or complaint!
             )}
           </form>
 
+          {activeForm === "login" && (
+            <div className="demo-accounts">
+            <button
+              type="button"
+              className="demo-toggle-btn"
+              onClick={() => setShowDemo(!showDemo)}
+            >
+              {showDemo ? "Hide demo accounts ▲" : "View demo accounts ▼"}
+            </button>
+          {showDemo && (
+              <div className="demo-accounts-box">
+                <div className="demo-account-item">
+                  <span className="demo-role">Admin</span>
+                  <span className="demo-detail">demo.admin@bicms.test</span>
+                  <span className="demo-detail">DemoAdmin123!</span>
+                </div>
+                <div className="demo-account-item">
+                  <span className="demo-role">User</span>
+                  <span className="demo-detail">demo.resident@bicms.test</span>
+                  <span className="demo-detail">Demo123!</span>
+                </div>
+            </div>
+          )}
+          </div>
+        )}
+
           <p className="login-toggle-text">
             {activeForm === "login" ? (
               <>
