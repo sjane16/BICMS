@@ -351,7 +351,7 @@ and facilitate your request or complaint!
               className="demo-toggle-btn"
               onClick={() => setShowDemo(!showDemo)}
             >
-              {showDemo ? "Hide demo accounts ▲" : "View demo accounts ▼"}
+              {showDemo ? "Hide demo accounts" : "View demo accounts"}
             </button>
           {showDemo && (
               <div className="demo-accounts-box">
