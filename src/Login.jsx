@@ -20,6 +20,7 @@ function Login() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [showDemo, setShowDemo] = useState(false);
   const [errors, setErrors] = useState({
     passwordMatch: "",
     registerError: "",
