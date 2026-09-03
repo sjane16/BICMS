@@ -36,7 +36,7 @@ function Front(){
         <div className = "hero-section">
          <div className = "front">
                 <h1 className="main"><b>Welcome To Our <span className = "brgy_op"> Barangay Management System! </span> </b></h1>
-                <p className="desc">Kamusta, Barangay 314! You can now request certificates and file complaints online—wala nang mahabang pila-pila! </p>
+                <p className="desc">Kamusta, Barangay 134! You can now request certificates and file complaints online—wala nang mahabang pila-pila! </p>
                 <div className="bpage">
                     <Link to="/login">
                     <button className="bp1"><b>Get Started     →</b></button>
