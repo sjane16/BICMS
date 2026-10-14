@@ -52,7 +52,7 @@ The frontend application uses the following technologies:
 | **Build Tool** | Vite 7 | Development server and production builds |
 | **Programming Language** | JavaScript | Frontend application logic |
 | **Routing** | React Router DOM | Client-side navigation |
-| **HTTP Client** | Axios | Communication with backend APIs |
+| **HTTP Client** | Fetch API | Communication with backend APIs |
 | **Notifications** | React Toastify | Displaying user notifications |
 | **Code Quality** | ESLint | Identifying code quality issues |
 | **Deployment** | Vercel | Frontend application hosting |
@@ -72,7 +72,7 @@ BICMS follows a **separated frontend and backend architecture**, allowing the cl
         +---------------------+
                    |
                    | HTTP API Requests
-                   | Axios / JSON
+                   | FetchAPI / JSON
                    v
         +---------------------+
         |  BACKEND            |
